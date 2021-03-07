@@ -5,15 +5,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 1.5vw;
+    margin-left: 25px;
 }
 
 .right-side-navbar {
-    margin-right: 5vw;
+    margin-right: 60px;
 }
 
-.resume-illustration {
+.svg-container {
     position: absolute;
     top: 19vh;
     left: 60vw;
+    width: auto;
+    height: auto;
 }
