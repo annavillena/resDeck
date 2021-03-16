@@ -25,17 +25,21 @@ const NavBar = styled.div`
         font-weight: 400;
     }
 
-    button {
+    button, a {
         width: 155px;
         height: 60px;
         font-family: 'Lato';
         font-size: 24px;
+        cursor: pointer;
     }
 
     #login-button {
         color: #0D1B4C;
-        background-color: white;
-        border: none;
+        text-decoration: none;
+    }
+
+    #login-button:hover {
+        text-decoration: underline;
     }
 
     #sign-up-button {
@@ -44,8 +48,12 @@ const NavBar = styled.div`
         border-radius: 15px;
     }
 
-    button + button {
-        margin-left: 30px;
+    #sign-up-button:hover {
+        background-color: #1B2A61;
+    }
+
+    a + a {
+        margin-left: 64px;
     }
 `
 
@@ -127,8 +135,10 @@ const Home = () =>  {
                 </div>
 
                 <div className='right-side-navbar'>
-                    <button id='login-button'>LOGIN</button>
-                    <button id='sign-up-button'>SIGN UP</button>
+                    <a id='login-button' href='login'>LOGIN</a>
+                    <a href='signup'>
+                        <button id='sign-up-button'>SIGN UP</button>
+                    </a>
                 </div>
             </NavBar>
 
