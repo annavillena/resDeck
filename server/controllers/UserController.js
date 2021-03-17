@@ -1,5 +1,6 @@
 const User = require('../models/UserModel.js'),
-    signToken = require('../authHelperFunctions').signToken
+    signToken = require('../authHelperFunctions').signToken,
+    QB = require('../config/QuickBloxSession');
 
 module.exports = {
     // list users
@@ -24,7 +25,6 @@ module.exports = {
 
     // creates new user
     create: async (req, res) => {
-        console.log("entered create")
         try {
             User.findOne ({ email: req.body.email }).then(user => {
                 if (user) {
@@ -34,6 +34,31 @@ module.exports = {
                 
             const user = await User.create(req.body);
             const token = await signToken(user);
+
+            const QBparams = {
+                email: req.body.email,
+                password: req.body.password,
+                full_name: req.body.name
+            }
+            QB.users.create(QBparams, function(error, result) {
+                if (error) {
+                    console.log("Create user error: " + JSON.stringify(error));
+                }
+                else {
+                    console.log(result);
+                    user.QBId = result.id;
+                    user.save();
+                    
+                    QB.createSession(QBparams, function(error, result) {
+                        if (error) {
+                            console.log(JSON.stringify(error));
+                        }
+                        else {
+                            console.log(result);
+                        }
+                    });
+                }
+            });
 
             if (token) {
                 return res.status(200).send({success: true, message: "User successfully created, token attached", token});
@@ -91,6 +116,28 @@ module.exports = {
         if(!user || !user.validPassword(req.body.password)) {
             return res.status(400).send({success: false, message: "Invalid Login"});
         }
+
+        const QBparams = {
+            email: req.body.email,
+            password: req.body.password,
+            full_name: req.body.name
+        }
+        QB.login(QBparams, function(error, result) {
+            if (error) {
+                console.log("Login user error: " + JSON.stringify(error));
+            }
+            else {
+                console.log(result);
+                QB.createSession(QBparams, function(error, result) {
+                    if (error) {
+                        console.log(JSON.stringify(error));
+                    }
+                    else {
+                        console.log(result);
+                    }
+                });
+            }
+        });
 
         const token = await signToken(user);
         return res.status(200).send({success: true, message: "User successfully logged in, token attached", token});

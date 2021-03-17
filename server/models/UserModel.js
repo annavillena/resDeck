@@ -8,7 +8,8 @@ const User = new mongoose.Schema({
     isJobSeeker: { type: Boolean, default: false },
     isProfessional: { type: Boolean, default: false },
     linkedInProfileURL: { type: String },
-    date: { type: Date, default: Date.now }
+    date: { type: Date, default: Date.now },
+    QBId: { type: Number }
 });
 
 // adds method to user to create hashed password
