@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 import Logo from '../Logo'
-import Menu from '../Menu/Menu';
+import Menu from '../Menu/Menu'
 import './NavBar.css';
 
 const NavBar = () => {
@@ -8,8 +9,9 @@ const NavBar = () => {
         <div>
             <div id='nav-container'>
                 <div className='left-side-navbar'>
-                    <Logo />
-                    <h1 id='title'>resDeck</h1>
+                    <Link to='/'>
+                        <Logo />
+                    </Link>
                 </div>
 
                 <div className='right-side-navbar'>
