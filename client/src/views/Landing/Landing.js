@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import './Landing.css'
 import Logo from '../../components/Logo'
@@ -135,10 +136,10 @@ const Home = () =>  {
                 </div>
 
                 <div className='right-side-navbar'>
-                    <a id='login-button' href='login'>LOGIN</a>
-                    <a href='signup'>
+                    <Link id='login-button' to='/login'>LOGIN</Link>
+                    <Link to='/signup'>
                         <button id='sign-up-button'>SIGN UP</button>
-                    </a>
+                    </Link>
                 </div>
             </NavBar>
 
