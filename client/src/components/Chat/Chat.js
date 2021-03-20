@@ -7,6 +7,9 @@ import Message from './Message'
 
 const Container = styled.div`
     background-color: white;
+    width: 100%;
+    height: 100%;
+    position: relative;
 `
 
 const Title = styled.div`
@@ -37,14 +40,18 @@ const Title = styled.div`
 const MessageArea = styled.div`
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 32px; /* TODO: Determine this */
-    border-bottom: 3px solid #0D1B4C;
+    height: 69.5%;
+    overflow: scroll;
 `
 
 const SendContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
+    border-top: 3px solid #0D1B4C;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
 
     #send-button-container {
         width: 15%;
@@ -84,15 +91,15 @@ const ChatBox = styled.textarea`
     }
 `
 
-const Chat = () => {
+const Chat = (props) => {
     return (
         <Container>
             <Title>
-                <h1>Samantha Jansen</h1>
+                <h1>{props.otherUser || 'Nicholas Networks'}</h1>
                 <FaLinkedin id='linkedin-icon' />
             </Title>
-            <TimeStamp date={Date()}/>
             <MessageArea>
+                <TimeStamp date={Date()}/>
                 <Message user='1' messageContent='Hello!' time='8:02 AM'/>
                 <Message user='1' messageContent='I like your resume, but focus more on leadership skills!' time='8:03 AM'/>
                 <Message user='2' name='Nicholas Networks' messageContent='Thanks for letting me know, we should connect on LinkedIn!' time='10:25 AM'/>
