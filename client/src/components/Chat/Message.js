@@ -40,9 +40,9 @@ const MessageContent = styled.p`
 const Message = (props) => {
     return (
         <Container user={props.user}>
-            <Name>{props.name || 'Wally Worker'}</Name>
-            <Time>{props.time || '8:01 AM'}</Time>
-            <MessageContent user={props.user}>{props.messageContent || 'Thanks for the advice, Nicholas!'}</MessageContent>
+            <Name>{props.name || 'Name not found'}</Name>
+            <Time>{props.time || 'Time not found'}</Time>
+            <MessageContent user={props.user}>{props.messageContent || 'Message not found'}</MessageContent>
         </Container>
     )
 }

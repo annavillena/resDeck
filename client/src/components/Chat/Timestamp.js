@@ -10,7 +10,7 @@ const Container = styled.div`
     align-items: center;
 
     h3 {
-        width: 20%;
+        width: 30%;
         display: flex;
         justify-content: center;
         font-family: 'Montserrat';
@@ -21,21 +21,23 @@ const Container = styled.div`
 `
 
 const HorizontalLine = styled.div`
-    width: 40%;
+    width: 35%;
     border-bottom: 2px solid #0D1B4C;
 `
 
 
 const TimeStamp = (props) => {
-    let today = new Date()
-    let date = props.toDateString
-    if (today == props.date) {
+    let date = ''
+    if (Date() == props.date) {
         date = 'TODAY'
+    }
+    else {
+        date = props.date.toDateString()
     }
     return (
         <Container>
             <HorizontalLine />
-            <h3>{date || '?'}</h3>
+            <h3>{date || 'Date Not found'}</h3>
             <HorizontalLine />
         </Container>
     )

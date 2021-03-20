@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FaLinkedin } from 'react-icons/fa'
 import TimeStamp from './Timestamp'
@@ -25,7 +25,13 @@ const Title = styled.div`
         color: #2867b2;
     }
 
-    h1 + #linkedin-icon {
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 + a {
         margin-left: 10px;
     }
 
@@ -40,7 +46,7 @@ const Title = styled.div`
 const MessageArea = styled.div`
     padding-left: 10px;
     padding-right: 10px;
-    height: 69.5%;
+    height: 69.2%;
     overflow: scroll;
 `
 
@@ -92,20 +98,54 @@ const ChatBox = styled.textarea`
 `
 
 const Chat = (props) => {
+
+    const [sendMessage, setSendMessage] = useState('');
+
+    const handleSendMessageChange = (e) => {
+        setSendMessage(e.target.value)
+    }
+
     return (
         <Container>
+
             <Title>
-                <h1>{props.otherUser || 'Nicholas Networks'}</h1>
-                <FaLinkedin id='linkedin-icon' />
+                <h1>{props.otherUser || 'Other user not found'}</h1>
+                <a href='https://LinkedIn.com/'>
+                    <FaLinkedin id='linkedin-icon' />
+                </a>
             </Title>
+
             <MessageArea>
-                <TimeStamp date={Date()}/>
-                <Message user='1' messageContent='Hello!' time='8:02 AM'/>
-                <Message user='1' messageContent='I like your resume, but focus more on leadership skills!' time='8:03 AM'/>
-                <Message user='2' name='Nicholas Networks' messageContent='Thanks for letting me know, we should connect on LinkedIn!' time='10:25 AM'/>
+                {props.messages.map((message, i, messages) => {
+                    if (i == 0) {
+                        return (
+                            <>
+                                <TimeStamp date={message.date}/>
+                                <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.time} />
+                            </>
+                        )
+                    }
+                    else {
+                        const previousMessage = messages[i - 1]
+                        if (previousMessage.date.toDateString() != message.date.toDateString()) {
+                            return (
+                                <>
+                                    <TimeStamp date={message.date}/>
+                                    <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.time} />
+                                </>
+                            )
+                        }
+                        else {
+                            return (
+                                <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.time} />
+                            )
+                        }
+                    }
+                })}
             </MessageArea>
+
             <SendContainer>
-                <ChatBox placeholder='Type a message...' />
+                <ChatBox placeholder='Type a message...' onChange={handleSendMessageChange} />
                 <div id='send-button-container'>
                     <svg id='send-button' width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 17.0417H33.0833" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -113,6 +153,7 @@ const Chat = (props) => {
                     </svg>
                 </div>
             </SendContainer>
+
         </Container>
     )
 }
