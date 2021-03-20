@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { FaLinkedin } from 'react-icons/fa'
 import TimeStamp from './Timestamp'
@@ -63,6 +63,7 @@ const SendContainer = styled.div`
         width: 15%;
         display: flex;
         justify-content: right;
+        cursor: pointer;
     }
 
     #send-button {
@@ -99,11 +100,37 @@ const ChatBox = styled.textarea`
 
 const Chat = (props) => {
 
-    const [sendMessage, setSendMessage] = useState('');
+    const [sendMessage, setSendMessage] = useState('')
+    const [messages, setMessages] = useState(props.messages)
 
     const handleSendMessageChange = (e) => {
         setSendMessage(e.target.value)
     }
+
+    const submitSendMessage = () => {
+        if (sendMessage == '') {
+            return
+        }
+
+        messages.push({
+            user: 1,
+            name: 'Wally Worker',
+            date: new Date(),
+            time: '8:01 AM',
+            messageContent: sendMessage
+        })
+        setSendMessage('')
+    }
+
+    const chatEnter = (e) => {
+        if (e.keyCode == 13 && !e.shiftKey) {
+            submitSendMessage()
+        }
+    }
+
+    useEffect(() => {
+        document.getElementById('dummy').scrollIntoView()
+    })
 
     return (
         <Container>
@@ -115,8 +142,8 @@ const Chat = (props) => {
                 </a>
             </Title>
 
-            <MessageArea>
-                {props.messages.map((message, i, messages) => {
+            <MessageArea id='message-area' >
+                {messages.map((message, i, messages) => {
                     if (i == 0) {
                         return (
                             <>
@@ -142,11 +169,12 @@ const Chat = (props) => {
                         }
                     }
                 })}
+                <div id='dummy'></div>
             </MessageArea>
 
             <SendContainer>
-                <ChatBox placeholder='Type a message...' onChange={handleSendMessageChange} />
-                <div id='send-button-container'>
+                <ChatBox placeholder='Type a message...' value={sendMessage} onChange={handleSendMessageChange} onKeyDown={chatEnter} />
+                <div id='send-button-container' onClick={submitSendMessage}>
                     <svg id='send-button' width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 17.0417H33.0833" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M17.041 1L33.0827 17.0417L17.041 33.0833" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
