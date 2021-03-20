@@ -114,9 +114,9 @@ const Chat = (props) => {
 
         messages.push({
             user: 1,
-            name: 'Wally Worker',
+            name: props.user,
             date: new Date(),
-            time: '8:01 AM',
+            time: new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}),
             messageContent: sendMessage
         })
         setSendMessage('')
