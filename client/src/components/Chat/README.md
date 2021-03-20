@@ -14,7 +14,7 @@
 
 ## How to Use
 1. Import ```Chat``` from the ```Chat``` component directory.
-2. Implement the ```Chat``` component like below:
+2. Implement the ```Chat``` component like below (find ```dummyData``` further down):
 ```
 <Chat user='Wally Worker' otherUser='Nicholas Networks' messages={dummyData} />
 ```
