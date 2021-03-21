@@ -8,6 +8,7 @@
 - Responsive to width and height (to some extent)
 - Display messages from array of objects
 - Add timestamp of day of messages
+- Dynamically display name if necessary
 - Update messages state when current user sends a message (resets on refresh)
 - Scroll to bottom of messages when a new message appears (state updates)
 
@@ -72,6 +73,7 @@ const dummyData = [
 
 
 ## To Do
+- Message spacing
 - Improve overall functionality
 - Improve UX
 - Profile pictures

@@ -176,17 +176,29 @@ const Chat = (props) => {
 
             <MessageArea id='message-area' >
                 {messages.map((message, i, messages) => {
+
+                    /* If first message or new day */
                     if (i == 0 || messages[i - 1].date.toDateString() != message.date.toDateString()) {
                         return (
                             <>
                                 <TimeStamp date={message.date}/>
-                                <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
+                                <Message displayHeader={true} user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
                             </>
                         )
                     }
+
+                    /* If not from same user or 1 hour passed*/
+                    if (messages[i - 1].user != message.user || Math.abs(messages[i - 1].date - message.date) / 36e5 > 1) {
+                        return (
+                            <Message displayHeader={true} user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
+                        )
+                    }
+
+                    /* Otherwise, no message header */
                     return (
-                        <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
+                        <Message displayHeader={false} user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
                     )
+
                 })}
                 <div id='dummy'></div>
             </MessageArea>

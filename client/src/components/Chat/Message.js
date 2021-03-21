@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: ${props => {if (props.user == '1') { return 'flex-end'} return 'flex-start'}};
+    align-items: ${props => {if (props.user === 1) { return 'flex-end'} return 'flex-start'}};
     width: 100%;
 `
 
@@ -15,6 +15,7 @@ const Name = styled.h2`
     font-size: 24px;
     line-height: 29px;
     margin-bottom: 0px;
+    margin-top: 0px;
 `
 
 const Time = styled.h3`
@@ -36,7 +37,7 @@ const MessageContent = styled.p`
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    text-align: ${props => {if (props.user == '1') { return 'right'} return 'left'}};
+    text-align: ${props => {if (props.user === 1) { return 'right'} return 'left'}};
 
     /* Margin */
     margin-top: 0px;
@@ -44,11 +45,18 @@ const MessageContent = styled.p`
 `
 
 const Message = (props) => {
+    if (props.displayHeader) {
+        return (
+            <Container user={props.user}>
+                <Name>{props.name || 'Name not found'}</Name>
+                <Time>{props.time || 'Time not found'}</Time>
+                <MessageContent title={props.time} user={props.user}>{props.messageContent || 'Message not found'}</MessageContent>
+            </Container>
+        )
+    }
     return (
         <Container user={props.user}>
-            <Name>{props.name || 'Name not found'}</Name>
-            <Time>{props.time || 'Time not found'}</Time>
-            <MessageContent user={props.user}>{props.messageContent || 'Message not found'}</MessageContent>
+            <MessageContent title={props.time} user={props.user}>{props.messageContent || 'Message not found'}</MessageContent>
         </Container>
     )
 }
