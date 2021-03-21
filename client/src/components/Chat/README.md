@@ -32,48 +32,39 @@ The name of the user that the current user is sending messages to.
 An array **sorted by age** of objects with the following data:
 ```
 {
-    user: 1,                    /* integer: 1 = user, 2 = otherUser */
-    name: 'Wally Worker',       /* string: name of sender */
-    date: Date(),               /* Date: date of message sent */
-    time: '8:01 AM',            /* string: time of message sent */
-    messageContent: 'Hello!'    /* string: message content */
+    user: 1,                                /* integer: 1 = user, 2 = otherUser */
+    name: 'Wally Worker',                   /* string: name of sender */
+    date: new Date('2021-03-19T14:32:00Z'), /* Date: date of message sent */
+    messageContent: 'Hello!'                /* string: message content */
 }
 ```
 
 
 ## Example messages Array
 ```
-const today = new Date();
-const yesterday = new Date();
-yesterday.setDate(yesterday.getDate() - 1)
-
 const dummyData = [
     {
         user: 1,
         name: 'Wally Worker',
-        date: yesterday,
-        time: '8:01 AM',
+        date: new Date('2021-03-19T14:32:00Z'),
         messageContent: 'Hello!'
     },
     {
         user: 1,
         name: 'Wally Worker',
-        date: yesterday,
-        time: '8:02 AM',
+        date: new Date('2021-03-19T14:33:00Z'),
         messageContent: 'I like your resume, but you should focus more on leadership skills!'
     },
     {
         user: 2,
         name: 'Nicholas Networks',
-        date: today,
-        time: '10:25 AM',
+        date: new Date('2021-03-20T18:16:00Z'),
         messageContent: 'Thanks for letting me know, we should connect on LinkedIn!'
     },
     {
         user: 2,
         name: 'Nicholas Networks',
-        date: today,
-        time: '10:26 AM',
+        date: new Date('2021-03-20T18:16:00Z'),
         messageContent: 'Any other suggestions?'
     }
 ]
@@ -82,7 +73,6 @@ const dummyData = [
 
 ## To Do
 - Improve overall functionality ()
-- Get message time from date property
 - Fix input being too large at smaller heights
 - Improve UX
 - Profile pictures
