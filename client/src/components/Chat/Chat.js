@@ -6,19 +6,24 @@ import Message from './Message'
 
 
 const Container = styled.div`
-    background-color: white;
+    position: relative;
     width: 100%;
     height: 100%;
-    position: relative;
+    background-color: white;
 `
 
 const Title = styled.div`
+    /* Display */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    /* Size */
     width: 100%;
     height: 15%;
+
+    /* Misc */
     border-bottom: 3px solid #0D1B4C;
 
     #linkedin-icon {
@@ -44,25 +49,32 @@ const Title = styled.div`
 `
 
 const MessageArea = styled.div`
+    height: 69.2%;
     padding-left: 10px;
     padding-right: 10px;
-    height: 69.2%;
     overflow: scroll;
 `
 
 const SendContainer = styled.div`
-    width: 100%;
+    /* Display */
     display: flex;
     flex-direction: row;
-    border-top: 3px solid #0D1B4C;
-    height: 15%;
+
+    /* Position */
     position: absolute;
     bottom: 0;
 
+    /* Size */
+    width: 100%;
+    height: 15%;
+
+    /* Misc */
+    border-top: 3px solid #0D1B4C;
+
     #send-button-container {
-        width: 15%;
         display: flex;
         justify-content: right;
+        width: 15%;
         cursor: pointer;
     }
 
@@ -75,18 +87,25 @@ const SendContainer = styled.div`
 `
 
 const ChatBox = styled.textarea`
+    /* Sizing */
     width: 85%;
     height: 75px;
+
+    /* Font */
     font-family: 'Lato';
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    resize: none;
-    border: none;
+
+    /* Padding/Margin */
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+
+    /* Misc */
+    border: none;
+    resize: none;
     overflow: scroll;
 
     ::placeholder {
@@ -100,18 +119,23 @@ const ChatBox = styled.textarea`
 
 const Chat = (props) => {
 
+    /* States */
     const [sendMessage, setSendMessage] = useState('')
     const [messages, setMessages] = useState(props.messages)
 
+    /* On ChatBox change */
     const handleSendMessageChange = (e) => {
         setSendMessage(e.target.value)
     }
 
+    /* Add new message to state when "sent" */
     const submitSendMessage = () => {
+        /* Do not send if empty */
         if (sendMessage == '') {
             return
         }
 
+        /* Push new message to state */
         messages.push({
             user: 1,
             name: props.user,
@@ -119,15 +143,24 @@ const Chat = (props) => {
             time: new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}),
             messageContent: sendMessage
         })
+
+        /* Reset message state */
         setSendMessage('')
     }
 
+    /* When enter pressed in ChatBox */
     const chatEnter = (e) => {
+        /* Enter = code 13 */
         if (e.keyCode == 13 && !e.shiftKey) {
+            /* Prevent new line */
+            e.preventDefault()
+
+            /* Send message behavior */
             submitSendMessage()
         }
     }
 
+    /* Scroll to bottom of chat when new message sent */
     useEffect(() => {
         document.getElementById('dummy').scrollIntoView()
     })
@@ -144,7 +177,7 @@ const Chat = (props) => {
 
             <MessageArea id='message-area' >
                 {messages.map((message, i, messages) => {
-                    if (i == 0) {
+                    if (i == 0 || messages[i - 1].date.toDateString() != message.date.toDateString()) {
                         return (
                             <>
                                 <TimeStamp date={message.date}/>
@@ -152,22 +185,9 @@ const Chat = (props) => {
                             </>
                         )
                     }
-                    else {
-                        const previousMessage = messages[i - 1]
-                        if (previousMessage.date.toDateString() != message.date.toDateString()) {
-                            return (
-                                <>
-                                    <TimeStamp date={message.date}/>
-                                    <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
-                                </>
-                            )
-                        }
-                        else {
-                            return (
-                                <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
-                            )
-                        }
-                    }
+                    return (
+                        <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
+                    )
                 })}
                 <div id='dummy'></div>
             </MessageArea>

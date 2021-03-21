@@ -3,10 +3,10 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: ${props => {if (props.user == '1') { return 'flex-end'} return 'flex-start'}};
+    width: 100%;
 `
 
 const Name = styled.h2`
@@ -22,17 +22,23 @@ const Time = styled.h3`
     font-weight: 300;
     font-size: 18px;
     line-height: 22px;
+
     margin-top: 0px;
     margin-bottom: 5px;
 `
 
 const MessageContent = styled.p`
+    /* Size */
     width: 75%;
-    text-align: ${props => {if (props.user == '1') { return 'right'} return 'left'}};
+
+    /* Font */
     font-family: 'Lato';
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
+    text-align: ${props => {if (props.user == '1') { return 'right'} return 'left'}};
+
+    /* Margin */
     margin-top: 0px;
     margin-bottom: 0px;
 `

@@ -3,16 +3,24 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
-    width: 100%;
+    /* Display */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
+    /* Size */
+    width: 100%;
+
     h3 {
-        width: 30%;
+        /* Display */
         display: flex;
         justify-content: center;
+
+        /* Size */
+        width: 30%;
+
+        /* Font */
         font-family: 'Montserrat';
         font-weight: 400;
         font-size: 18px;
@@ -28,8 +36,18 @@ const HorizontalLine = styled.div`
 
 const TimeStamp = (props) => {
     let date = ''
-    if (new Date().toDateString() == props.date.toDateString()) {
+
+    /* Get Today and Yesterday dates */
+    const today = new Date()
+    let yesterday = new Date()
+    yesterday.setDate(yesterday.getDate() - 1)
+    
+    /* Determine if date is today or yesterday */
+    if (today.toDateString() == props.date.toDateString()) {
         date = 'TODAY'
+    }
+    else if (yesterday.toDateString() == props.date.toDateString()) {
+        date = 'YESTERDAY'
     }
     else {
         date = props.date.toDateString()
