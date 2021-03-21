@@ -49,9 +49,9 @@ const Title = styled.div`
 `
 
 const MessageArea = styled.div`
-    height: 69.2%;
-    padding-left: 10px;
-    padding-right: 10px;
+    height: 64.2%;
+    padding-left: 12px;
+    padding-right: 12px;
     overflow: scroll;
 `
 
@@ -66,7 +66,7 @@ const SendContainer = styled.div`
 
     /* Size */
     width: 100%;
-    height: 15%;
+    height: 20%;
 
     /* Misc */
     border-top: 3px solid #0D1B4C;
