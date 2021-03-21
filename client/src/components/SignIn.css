@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+.left-side-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1.5vw;
+}
+
+.right-side-navbar {
+    margin-right: 5vw;
+}
+
+.resDeck {
+    position: absolute;
+    top: 2vh;
+    left: 3vw;
+}
+
+.menu{
+    position: absolute;
+    top: 2vh;
+    left: 95vw;
+}
+
+.swirl{
+    position: absolute;
+    top: 40vh;
+    left: 0vw;
+    width: 100vw;
+    height: 15vh;
+}
+
+.rect{
+    position: absolute;
+    left: 31.04%;
+    right: 30.62%;
+    top: 8%;
+    bottom: 2.54%;
+
+    background: rgba(120, 194, 195, 0.9);
+    border-radius: 20px;
+}
+
+.signUpTitle{
+    position: absolute;
+    left: 45%;
+    top: 7.26%;
+    bottom: 79.98%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 59px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #0D1B4C;
+}
+
+.inputs{
+    position: absolute;
+    left: 39vw;
+    top: 22vh;
+}
+
+.inputBoxFirst{
+    position: absolute;
+    left: 33.24%;
+    right: 51.54%;
+    top: 22.55%;
+    width: 15vw;
+    height: 3vh;
+
+    background: #FFFFFF;
+    border: 1px solid #888888;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inputBoxLast{
+    position: absolute;
+    left: 51.24%;
+    right: 51.54%;
+    top: 22.55%;
+    width: 15vw;
+    height: 3vh;
+
+    background: #FFFFFF;
+    border: 1px solid #888888;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inputBoxEmail{
+    position: absolute;
+    left: 33.24%;
+    right: 51.54%;
+    top: 30.55%;
+    width: 33vw;
+    height: 3vh;
+
+    background: #FFFFFF;
+    border: 1px solid #888888;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inputBoxPass{
+    position: absolute;
+    left: 33.24%;
+    right: 51.54%;
+    top: 38.55%;
+    width: 33vw;
+    height: 3vh;
+
+    background: #FFFFFF;
+    border: 1px solid #888888;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inputBoxInterested{
+    position: absolute;
+    left: 33.24%;
+    right: 51.54%;
+    top: 80.55%;
+    width: 33vw;
+    height: 3vh;
+
+    background: #FFFFFF;
+    border: 1px solid #888888;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.radioButtons{
+    position: absolute;
+    left: 33vw;
+    top: 47vh;
+    vertical-align: middle;
+    margin: 0;
+    float: left;
+
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+
+    color: #3F6699;
+}
+
+.signHeadingFirst{
+    position: absolute;
+    left: 33.24%;
+    top: 18.34%;
+
+    /* Sign Up Text */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #3F6699;
+}
+
+.signHeadingLast{
+    position: absolute;
+    left: 51.24%;
+    top: 18.34%;
+
+    /* Sign Up Text */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #3F6699;
+}
+
+.signHeadingEmail{
+    position: absolute;
+    left: 33.24%;
+    top: 26.72%;
+
+    /* Sign Up Text */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #3F6699;
+}
+
+.signHeadingPass{
+    position: absolute;
+    left: 33.24%;
+    top: 34.72%;
+
+    /* Sign Up Text */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #3F6699;
+}
+
+.signHeadingRole{
+    position: absolute;
+    left: 33.24%;
+    top: 43.72%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #3F6699;
+}
+
+.signHeadingInterested{
+    position: absolute;
+    left: 33.24%;
+    top: 77.72%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #3F6699;
+}
+
+.signBtn{
+    position: absolute;
+    left: 45vw;
+    top: 85vh;
+}
+
+.addRes{
+    position: absolute;
+    left: 38vw;
+    top: 53vh;
+}
+
+.addHeadshot{
+    position: absolute;
+    left: 38vw;
+    top: 64vh;
+}
