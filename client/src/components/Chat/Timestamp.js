@@ -28,7 +28,7 @@ const HorizontalLine = styled.div`
 
 const TimeStamp = (props) => {
     let date = ''
-    if (Date() == props.date) {
+    if (new Date().toDateString() == props.date.toDateString()) {
         date = 'TODAY'
     }
     else {

@@ -148,7 +148,7 @@ const Chat = (props) => {
                         return (
                             <>
                                 <TimeStamp date={message.date}/>
-                                <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.time} />
+                                <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
                             </>
                         )
                     }
@@ -158,13 +158,13 @@ const Chat = (props) => {
                             return (
                                 <>
                                     <TimeStamp date={message.date}/>
-                                    <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.time} />
+                                    <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
                                 </>
                             )
                         }
                         else {
                             return (
-                                <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.time} />
+                                <Message user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
                             )
                         }
                     }
