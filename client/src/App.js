@@ -4,6 +4,7 @@ import Home from "./views/Home/Home";
 import NotFound from "./views/NotFound";
 import NavBar from "./components/Header/NavBar";
 import SignIn from "./components/SignIn";
+import Feed from "./components/Feed";
 
 
 const App = () => {
@@ -11,13 +12,12 @@ const App = () => {
     <div>
       <NavBar />
       <Switch>
-        <Route exact path="/Home" component={Home} />
+        <Route exact path="/Home" component={Feed} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
         <Route component={NotFound}/>
       </Switch>
-      <SignIn/>
     </div>
   );
 }
