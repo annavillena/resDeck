@@ -72,8 +72,7 @@ const dummyData = [
 
 
 ## To Do
-- Improve overall functionality ()
-- Fix input being too large at smaller heights
+- Improve overall functionality
 - Improve UX
 - Profile pictures
 

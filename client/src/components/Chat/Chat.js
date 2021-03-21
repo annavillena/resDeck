@@ -89,7 +89,7 @@ const SendContainer = styled.div`
 const ChatBox = styled.textarea`
     /* Sizing */
     width: 85%;
-    height: 75px;
+    height: 90%;
 
     /* Font */
     font-family: 'Lato';
@@ -100,8 +100,7 @@ const ChatBox = styled.textarea`
     /* Padding/Margin */
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    transform: translateY(5%);
 
     /* Misc */
     border: none;
