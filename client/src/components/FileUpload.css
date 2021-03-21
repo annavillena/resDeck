@@ -1,0 +1,8 @@
+.input-group-prepend{
+    padding-right: 8px;
+}
+
+.custom-file-label{
+    height: 60px;
+    background: rgba(120, 194, 195, 0.9);
+}

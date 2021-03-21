@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 .left-side-navbar {
     display: flex;
@@ -35,10 +34,12 @@
 
 .rect{
     position: absolute;
-    left: 31.04%;
-    right: 30.62%;
-    top: 8%;
-    bottom: 2.54%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    height: 93vh;
+    width: 34vw;
 
     background: rgba(120, 194, 195, 0.9);
     border-radius: 20px;
@@ -46,14 +47,15 @@
 
 .signUpTitle{
     position: absolute;
-    left: 45%;
-    top: 7.26%;
-    bottom: 79.98%;
+    top: 8.8%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
 
     font-family: Montserrat;
     font-style: normal;
-    font-weight: normal;
-    font-size: 48px;
+    font-weight: 400;
+    font-size: 38px;
     line-height: 59px;
     /* identical to box height */
 
@@ -64,19 +66,12 @@
     color: #0D1B4C;
 }
 
-.inputs{
-    position: absolute;
-    left: 39vw;
-    top: 22vh;
-}
-
 .inputBoxFirst{
     position: absolute;
-    left: 33.24%;
-    right: 51.54%;
-    top: 22.55%;
-    width: 15vw;
-    height: 3vh;
+    left: 35.5%;
+    top: 18%;
+    width: 13vw;
+    height: 4vh;
 
     background: #FFFFFF;
     border: 1px solid #888888;
@@ -86,11 +81,10 @@
 
 .inputBoxLast{
     position: absolute;
-    left: 51.24%;
-    right: 51.54%;
-    top: 22.55%;
-    width: 15vw;
-    height: 3vh;
+    right: 35.5%;
+    top: 18%;
+    width: 13vw;
+    height: 4vh;
 
     background: #FFFFFF;
     border: 1px solid #888888;
@@ -100,11 +94,10 @@
 
 .inputBoxEmail{
     position: absolute;
-    left: 33.24%;
-    right: 51.54%;
-    top: 30.55%;
-    width: 33vw;
-    height: 3vh;
+    left: 35.5%;
+    top: 26.6%;
+    width: 28.7vw;
+    height:4vh;
 
     background: #FFFFFF;
     border: 1px solid #888888;
@@ -114,11 +107,10 @@
 
 .inputBoxPass{
     position: absolute;
-    left: 33.24%;
-    right: 51.54%;
-    top: 38.55%;
-    width: 33vw;
-    height: 3vh;
+    left: 35.5%;
+    top: 36%;
+    width: 28.7vw;
+    height: 4vh;
 
     background: #FFFFFF;
     border: 1px solid #888888;
@@ -128,11 +120,10 @@
 
 .inputBoxInterested{
     position: absolute;
-    left: 33.24%;
-    right: 51.54%;
-    top: 80.55%;
-    width: 33vw;
-    height: 3vh;
+    left: 35.5%;
+    top: 79%;
+    width: 28.7vw;
+    height: 4vh;
 
     background: #FFFFFF;
     border: 1px solid #888888;
@@ -142,32 +133,40 @@
 
 .radioButtons{
     position: absolute;
-    left: 33vw;
-    top: 47vh;
+    left: 35.5%;
+    top: 45.5%;
     vertical-align: middle;
     margin: 0;
     float: left;
 
-
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 21px;
 
     color: #3F6699;
 }
 
+.job-seeker{
+    margin-right: 7px;
+}
+
+.professional{
+    margin-left: 36px;
+    margin-right: 7px;
+}
+
 .signHeadingFirst{
     position: absolute;
-    left: 33.24%;
-    top: 18.34%;
+    left: 35.5%;
+    top: 14%;
 
     /* Sign Up Text */
 
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 29px;
     display: flex;
     align-items: center;
@@ -177,15 +176,15 @@
 
 .signHeadingLast{
     position: absolute;
-    left: 51.24%;
-    top: 18.34%;
+    left : 51.5%;
+    top: 14%;
 
     /* Sign Up Text */
 
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 29px;
     display: flex;
     align-items: center;
@@ -195,15 +194,15 @@
 
 .signHeadingEmail{
     position: absolute;
-    left: 33.24%;
-    top: 26.72%;
+    left: 35.5%;
+    top: 22.9%;
 
     /* Sign Up Text */
 
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 29px;
     display: flex;
     align-items: center;
@@ -213,15 +212,15 @@
 
 .signHeadingPass{
     position: absolute;
-    left: 33.24%;
-    top: 34.72%;
+    left: 35.5%;
+    top: 32%;
 
     /* Sign Up Text */
 
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 29px;
     display: flex;
     align-items: center;
@@ -231,13 +230,13 @@
 
 .signHeadingRole{
     position: absolute;
-    left: 33.24%;
-    top: 43.72%;
+    left: 35.5%;
+    top: 42.22%;
 
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 29px;
     display: flex;
     align-items: center;
@@ -247,13 +246,13 @@
 
 .signHeadingInterested{
     position: absolute;
-    left: 33.24%;
-    top: 77.72%;
+    left: 35.5%;
+    top: 75%;
 
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 29px;
     display: flex;
     align-items: center;
@@ -261,20 +260,77 @@
     color: #3F6699;
 }
 
-.signBtn{
+.addResume{
     position: absolute;
-    left: 45vw;
-    top: 85vh;
-}
+    top: 56.5%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    width: 23vw;
 
-.addRes{
-    position: absolute;
-    left: 38vw;
-    top: 53vh;
+    border:#3F6699;
+    border-width: 2px;
+    border-style: dashed;
+    border-radius: 15px;
+    padding: 6px 10px 6px 10px;
 }
 
 .addHeadshot{
     position: absolute;
-    left: 38vw;
-    top: 64vh;
+    top: 68%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    width: 23vw;
+
+    border:#3F6699;
+    border-width: 2px;
+    border-style: dashed;
+    border-radius: 15px;
+    padding: 6px 10px 6px 10px;
+}
+
+.resume-txt{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    align-items: center;
+
+    color: #3F6699;
+
+    position: absolute;
+    top: 55.2%;
+    left: 44%;
+}
+
+.signBtnPosition{
+    position: absolute;
+   top: 90%;
+   left: 50%;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%); 
+}
+
+.signBtn{
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 18px;
+   line-height: 20px;
+   border-radius: 8px;
+
+   background-color: #0D1B4C;
+   color:#F3ECC8;
+
+   align-items: center;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+textarea, input{
+    padding: 8px;
 }

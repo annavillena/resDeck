@@ -9,7 +9,6 @@ import SignIn from "./components/SignIn";
 const App = () => {
   return (
     <div>
-      <NavBar />
       <Switch>
         <Route exact path="/Home" component={Home} />
         <Route exact path="/">
@@ -17,7 +16,6 @@ const App = () => {
         </Route>
         <Route component={NotFound}/>
       </Switch>
-      <SignIn/>
     </div>
   );
 }
