@@ -10,7 +10,6 @@ import Feed from "./components/Feed";
 const App = () => {
   return (
     <div>
-      <NavBar />
       <Switch>
         <Route exact path="/Home" component={Feed} />
         <Route exact path="/">
