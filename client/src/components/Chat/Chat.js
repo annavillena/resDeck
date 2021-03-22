@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FaLinkedin } from 'react-icons/fa'
-import TimeStamp from './Timestamp'
-import Message from './Message'
+import MessageArea from './MessageArea'
+import SendArea from './SendArea'
 
 
 const Container = styled.div`
@@ -48,73 +48,6 @@ const Title = styled.div`
     }
 `
 
-const MessageArea = styled.div`
-    height: 64.2%;
-    padding-left: 12px;
-    padding-right: 12px;
-    overflow: scroll;
-`
-
-const SendContainer = styled.div`
-    /* Display */
-    display: flex;
-    flex-direction: row;
-
-    /* Position */
-    position: absolute;
-    bottom: 0;
-
-    /* Size */
-    width: 100%;
-    height: 20%;
-
-    /* Misc */
-    border-top: 3px solid #0D1B4C;
-
-    #send-button-container {
-        display: flex;
-        justify-content: right;
-        width: 15%;
-        cursor: pointer;
-    }
-
-    #send-button {
-        align-self: flex-end;
-        color: #0D1B4C;
-        margin-right: 8px;
-        margin-bottom: 8px;
-    }
-`
-
-const ChatBox = styled.textarea`
-    /* Sizing */
-    width: 85%;
-    height: 90%;
-
-    /* Font */
-    font-family: 'Lato';
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-
-    /* Padding/Margin */
-    padding-left: 10px;
-    padding-right: 10px;
-    transform: translateY(5%);
-
-    /* Misc */
-    border: none;
-    resize: none;
-    overflow: scroll;
-
-    ::placeholder {
-        color: #888888;
-    }
-
-    :focus {
-        outline: none;
-    }
-`
 
 const Chat = (props) => {
 
@@ -147,23 +80,6 @@ const Chat = (props) => {
         setSendMessage('')
     }
 
-    /* When enter pressed in ChatBox */
-    const chatEnter = (e) => {
-        /* Enter = code 13 */
-        if (e.keyCode == 13 && !e.shiftKey) {
-            /* Prevent new line */
-            e.preventDefault()
-
-            /* Send message behavior */
-            submitSendMessage()
-        }
-    }
-
-    /* Scroll to bottom of chat when new message sent */
-    useEffect(() => {
-        document.getElementById('dummy').scrollIntoView()
-    })
-
     return (
         <Container>
 
@@ -174,44 +90,9 @@ const Chat = (props) => {
                 </a>
             </Title>
 
-            <MessageArea id='message-area' >
-                {messages.map((message, i, messages) => {
+            <MessageArea messages={messages} />
 
-                    /* If first message or new day */
-                    if (i == 0 || messages[i - 1].date.toDateString() != message.date.toDateString()) {
-                        return (
-                            <>
-                                <TimeStamp date={message.date}/>
-                                <Message displayHeader={true} user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
-                            </>
-                        )
-                    }
-
-                    /* If not from same user or 1 hour passed*/
-                    if (messages[i - 1].user != message.user || Math.abs(messages[i - 1].date - message.date) / 36e5 > 1) {
-                        return (
-                            <Message displayHeader={true} user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
-                        )
-                    }
-
-                    /* Otherwise, no message header */
-                    return (
-                        <Message displayHeader={false} user={message.user} name={message.name} messageContent={message.messageContent} time={message.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} />
-                    )
-
-                })}
-                <div id='dummy'></div>
-            </MessageArea>
-
-            <SendContainer>
-                <ChatBox placeholder='Type a message...' value={sendMessage} onChange={handleSendMessageChange} onKeyDown={chatEnter} />
-                <div id='send-button-container' onClick={submitSendMessage}>
-                    <svg id='send-button' width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 17.0417H33.0833" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M17.041 1L33.0827 17.0417L17.041 33.0833" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </SendContainer>
+            <SendArea sendMessage={sendMessage} handleSendMessageChange={handleSendMessageChange} submitSendMessage={submitSendMessage} />
 
         </Container>
     )
