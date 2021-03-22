@@ -4,3 +4,7 @@
 #hamburger-menu, #close {
     cursor: pointer;
 }
+
+#menu-wrapper {
+    z-index: 9999;
+}

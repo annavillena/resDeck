@@ -34,14 +34,14 @@ const MenuContainer = styled.div`
         font-size: 55px;
         line-height: 67px;
         margin-left: 8%;
-        margin-top: 20%;
+        margin-top: 15%;
         font-family: 'Montserrat';
     }
 `
 
 const LogoutContainer = styled.div`
     position: absolute;
-    bottom: 0px;
+    bottom: 16px;
     right: 32px;
     display: flex;
     flex-direction: row;
@@ -54,12 +54,13 @@ const LogoutContainer = styled.div`
     }
 
     svg {
-        margin-top: 35px;
+        margin-top: 6px;
     }
 `
 
 const MenuOptions = styled.div`
     margin-left: 10%;
+    margin-top: 48px;
 
     h2 {
         font-family: 'Montserrat';
@@ -67,7 +68,7 @@ const MenuOptions = styled.div`
         font-size: 42px;
         line-height: 51px;
         margin: 0 !important;
-        margin-bottom: 32px !important;
+        margin-bottom: 16px !important;
     }
 
     #notifications {
@@ -85,7 +86,7 @@ const MenuOptions = styled.div`
 
 const Menu = (props) => {
     return (
-        <div>
+        <div id='menu-wrapper'>
             <svg id='hamburger-menu' onClick={() => {document.getElementById('menu').style.display = 'block'}} width="70" height="47" viewBox="0 0 70 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 23.5H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M1 1H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -111,7 +112,7 @@ const Menu = (props) => {
                         <Link to='/notifications'>
                             <h2>Notifications</h2>
                         </Link>
-                        <NotificationBadge id='badge' notifs={props.notifs || 11} />
+                        <NotificationBadge id='badge' notifs={props.notifs || 2} />
                     </div>
                     <Link to='/messages'>
                         <h2>Messages</h2>
