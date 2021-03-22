@@ -266,6 +266,7 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); 
     width: 23vw;
+    height: 67px;
 
     border:#3F6699;
     border-width: 2px;
@@ -281,6 +282,7 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); 
     width: 23vw;
+    height: 67px;
 
     border:#3F6699;
     border-width: 2px;

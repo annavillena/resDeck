@@ -4,5 +4,27 @@
 
 .custom-file-label{
     height: 60px;
-    background: rgba(120, 194, 195, 0.9);
+    opacity: 0;
+}
+
+.txt{
+    position: absolute;
+    top: 28%;
+    left: 29%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18.5px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #3F6699;
+}
+
+.icon{
+    position: absolute;
+    top: 5%;
+    left: 5%;
 }

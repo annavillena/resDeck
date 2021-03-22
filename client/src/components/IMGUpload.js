@@ -50,20 +50,24 @@ const IMGUpload = (props) => {
   }
 
   return (
+    <>
+        <h1 className='txt'>
+            {filename}
+        </h1>
+        <span className='icon'>
+          {icon}
+        </span>
     <Fragment>
       {/* {message ? <Message msg={message} /> : null} */}
         <div className="input-group">
-          <div className="input-group-prepend">
-            {icon}
-          </div>
           <div className='custom-file'>
+            
             <input type='file' className='custom-file-input' id='customFile' onChange={onChange} accept="image/*"/>
-            <label className='custom-file-label'>
-              {filename}
-            </label>
+            
           </div>
         </div>
     </Fragment>
+    </>
   );
 };
 
