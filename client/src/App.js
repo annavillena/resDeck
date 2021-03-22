@@ -10,16 +10,14 @@ import Feed from "./components/Feed";
 const App = () => {
   return (
     <div>
-   
-    <Switch>
-      <Route exact path="/Home" component={SignIn} />
-      <Route exact path="/">
-        <Redirect to="/Home" />
-      </Route>
-      <Route component={NotFound}/>
-    </Switch>
-    <SignIn/>
-  </div>
+      <Switch>
+        <Route exact path="/Home" component={Feed} />
+        <Route exact path="/">
+          <Redirect to="/Home" />
+        </Route>
+        <Route component={NotFound}/>
+      </Switch>
+    </div>
   );
 }
 
