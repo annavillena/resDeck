@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Feed.css';
 import SampleResume from "./sampleRes.jpg"
 import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap'
 
 const Feed = () => {
+    const [chat, setChat] = useState(false)
+
+    function goChat(){
+        if(chat)
+            setChat(false)
+        else
+            setChat(true)
+    }
+    
+
+    if(chat){
+        return <div>Chat Page!</div>
+    }
+
+
     return (
         <div>
 
@@ -24,7 +39,7 @@ const Feed = () => {
                 </svg>
             </div>
 
-            <div className = "chat">
+            <div className = "chat" onClick={()=>goChat()}>
                 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="40" cy="40" r="38.5" fill="#3F6699" stroke="#3F6699" stroke-width="3"/>
                 <path d="M19 48.6667C19 49.8454 19.4683 50.9759 20.3017 51.8094C21.1352 52.6429 22.2657 53.1111 23.4444 53.1111H50.1111L59 62V26.4444C59 25.2657 58.5317 24.1352 57.6983 23.3017C56.8648 22.4683 55.7343 22 54.5556 22H23.4444C22.2657 22 21.1352 22.4683 20.3017 23.3017C19.4683 24.1352 19 25.2657 19 26.4444V48.6667Z" fill="white"/>
