@@ -1,9 +1,35 @@
-import React from 'react';
-import './Feed.css';
+import React, {useState} from 'react';
+import './Login.css';
 import SampleResume from "./sampleRes.jpg"
 import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap'
+import Feed from "./Feed"
+import SignIn from "./SignIn"
 
 const Login = () => {
+
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [user, setUser] = useState("");
+    const [pass, setPass] = useState("");
+    const [noAccount, setNoAccount] = useState(false);
+    const dummyUser = "resDeck@admin.com";
+    const dummyPass = "1234";
+
+    function onClickButton(user, pass){
+        if(user == dummyUser && pass == dummyPass){
+            setLoggedIn(true);
+        }
+    }
+
+    function onClickSignUp(){
+        setNoAccount(true);
+    }
+
+    if(loggedIn){
+        return (<Feed/>);
+    }
+    else if(noAccount){
+        return (<div>Sign In Page Here!!</div>);
+    }
     return (
         <div>
 
@@ -30,14 +56,24 @@ const Login = () => {
                 </svg>
             </div>
 
-           <div className="rect"></div>
+           <div className="rect">
+               <div className = "emailHeading">Email</div>
+               <input type="text" onInput={e => {setUser(e.target.value)}} className="inputBoxEmail"/>
+               <div className = "passHeading">Password</div>
+               <input type="text" onInput={e => {setPass(e.target.value)}} className="inputBoxPass"/>
+               <div className = "noAccount">Don't have an account yet?</div>
+               <div className = "noAccountBold"><b onClick = {() => {onClickSignUp()}}>Sign Up</b></div>
+           </div>
+
+           <div>{user}</div>
+           <div>{pass}</div>
+
            <div className = "loginTitle">Log In</div>
        
 
-         <div className="loginBtn"><Button variant="primary">LOGIN</Button></div>
-         <button>
+           <div className='loginBtnPosition'><Button className="loginBtn" onClick = {()=>{onClickButton(user, pass)}}>LOGIN</Button></div>
            
-         </button>
+         
 
         </div>
     )

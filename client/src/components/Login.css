@@ -35,10 +35,10 @@
 
 .rect{
     position: absolute;
-    left: 31.04%;
-    right: 30.62%;
-    top: 17%;
-    bottom: 30%;
+    left: 50vw;
+    top: 45vh;
+    width: 40vw;
+    height: 60vh;
 
     background: rgba(120, 194, 195, 0.9);
     border-radius: 10px;
@@ -46,8 +46,8 @@
 
 .loginTitle{
     position: absolute;
-    left: 45%;
-    top: 27.26%;
+    left: 47vw;
+    top: 25vh;
     bottom: 79.98%;
 
     font-family: Montserrat;
@@ -64,70 +64,136 @@
     color: #0D1B4C;
 }
 
-.inputs{
+.emailHeading{
     position: absolute;
-    left: 39vw;
-    top: 22vh;
+    left: 9.06%;
+    right: 57.25%;
+    top: 28.79%;
+    bottom: 65.8%;
+
+    /* Sign Up Text */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #0D1B4C;
+    background-color:transparent;
 }
 
-.inputBoxFirst{
+.passHeading{
     position: absolute;
-    left: 33.24%;
-    right: 51.54%;
-    top: 22.55%;
-    width: 15vw;
-    height: 3vh;
+    left: 9.06%;
+    right: 63.82%;
+    top: 48.65%;
+    bottom: 45.7%;
 
-    background: #FFFFFF;
-    border: 1px solid #888888;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
+    /* Sign Up Text */
 
-.inputBoxLast{
-    position: absolute;
-    left: 51.24%;
-    right: 51.54%;
-    top: 22.55%;
-    width: 15vw;
-    height: 3vh;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
 
-    background: #FFFFFF;
-    border: 1px solid #888888;
-    box-sizing: border-box;
-    border-radius: 10px;
+    color: #0D1B4C;
+    background-color: transparent;
 }
 
 .inputBoxEmail{
     position: absolute;
-    left: 33.24%;
-    right: 51.54%;
-    top: 30.55%;
-    width: 33vw;
-    height: 3vh;
+    left: 9.06%;
+    right: 9.05%;
+    top: 35.48%;
+    bottom: 56.58%;
 
     background: #FFFFFF;
-    border: 1px solid #888888;
+    border: 1px solid #C4C4C4;
     box-sizing: border-box;
     border-radius: 10px;
 }
 
 .inputBoxPass{
     position: absolute;
-    left: 33.24%;
-    right: 51.54%;
-    top: 38.55%;
-    width: 33vw;
-    height: 3vh;
+    left: 9.06%;
+    right: 9.05%;
+    top: 55.55%;
+    bottom: 36.5%;
 
     background: #FFFFFF;
-    border: 1px solid #888888;
+    border: 1px solid #C4C4C4;
     box-sizing: border-box;
     border-radius: 10px;
 }
 
-.loginBtn{
+.noAccount{
+    /* Don’t have an account? Sign up */
     position: absolute;
-    left: 48vw;
-    top: 60vh;
+    left: 30.44%;
+    right: 29.17%;
+    top: 88.74%;
+    bottom: 5.84%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+
+    color: #0D1B4C;
+    background-color: transparent;
 }
+
+.noAccountBold{
+    /* Don’t have an account? Sign up */
+    position: absolute;
+    left: 56.44%;
+    right: 29.17%;
+    top: 88.74%;
+    bottom: 5.84%;
+
+    font-family: Montserrat;
+    font-style: bold;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+
+    color: #0D1B4C;
+    background-color: transparent;
+}
+
+b{
+    background-color:transparent
+}
+
+.loginBtnPosition{
+   position: absolute;
+   top: 58%;
+   left: 46%;
+}
+
+.loginBtn{
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 18px;
+   line-height: 24px;
+   border-radius: 8px;
+   height: 5vh;
+   width: 10vw;
+
+   background-color: #0D1B4C;
+   color:#F3ECC8;
+}
+
+   

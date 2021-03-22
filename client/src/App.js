@@ -11,7 +11,6 @@ import Login from "./components/Login";
 const App = () => {
   return (
     <div>
-      <NavBar />
       <Switch>
         <Route exact path="/Home" component={Feed} />
         <Route exact path="/Login" component={Login} />
