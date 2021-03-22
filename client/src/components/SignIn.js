@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SignIn.css';
 import SampleResume from "./sampleRes.jpg"
 import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap'
@@ -6,6 +6,12 @@ import PDFUpload from './PDFUpload.js'
 import IMGUpload from './IMGUpload.js'
 
 const SignIn = () => {
+    const [canUpload, setCanUpload] = useState('');
+
+    function onSubmit() {
+        setCanUpload('yes');
+    }
+
     return (
             <div>
     
@@ -55,14 +61,14 @@ const SignIn = () => {
               </div>
                 
                 <div className='addResume'>
-                    <PDFUpload/>    
+                    <PDFUpload upload={canUpload}/>    
                 </div>
 
                 <div className='addHeadshot'>
-                    <IMGUpload/>    
+                    <IMGUpload upload={canUpload}/>    
                 </div>
     
-             <div className='signBtnPosition'><Button className="signBtn">CREATE ACCOUNT</Button></div>
+             <div className='signBtnPosition'><Button className="signBtn" onClick={onSubmit}>CREATE ACCOUNT</Button></div>
     
             </div>
     )

@@ -6,7 +6,7 @@ import './FileUpload.css';
 
 // Code from https://www.youtube.com/watch?v=b6Oe2puTdMQ (Tutorial on File Uploading using React)
 
-const IMGUpload = () => {
+const IMGUpload = (props) => {
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('Choose Profile Image');
   const [uploadedFile, setUploadedFile] = useState({});
@@ -20,8 +20,7 @@ const IMGUpload = () => {
     setFilename(e.target.files[0].name);
   };
 
-  const onSubmit = async e => {
-    e.preventDefault();
+  async function onSubmit() {
     const formData = new FormData();
     formData.append('file', file);
 
@@ -46,10 +45,13 @@ const IMGUpload = () => {
     }
   };
 
+  if(props.upload == 'yes'){
+    onSubmit();
+  }
+
   return (
     <Fragment>
       {message ? <Message msg={message} /> : null}
-      <form onSubmit={onSubmit}>
         <div className="input-group">
           <div className="input-group-prepend">
             {icon}
@@ -61,7 +63,6 @@ const IMGUpload = () => {
             </label>
           </div>
         </div>
-      </form>
     </Fragment>
   );
 };

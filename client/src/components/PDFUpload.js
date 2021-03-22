@@ -6,7 +6,7 @@ import './FileUpload.css';
 
 // Code from https://www.youtube.com/watch?v=b6Oe2puTdMQ (Tutorial on File Uploading using React)
 
-const PDFUpload = () => {
+const PDFUpload = (props) => {
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('Choose Resume PDF');
   const [uploadedFile, setUploadedFile] = useState({});
@@ -23,8 +23,7 @@ const PDFUpload = () => {
     setFilename(e.target.files[0].name);
   };
 
-  const onSubmit = async e => {
-    e.preventDefault();
+  async function onSubmit() {
     const formData = new FormData();
     formData.append('file', file);
 
@@ -49,10 +48,13 @@ const PDFUpload = () => {
     }
   };
 
+  if(props.upload == 'yes'){
+    onSubmit();
+  }
+
   return (
     <Fragment>
       {message ? <Message msg={message} /> : null}
-      <form onSubmit={onSubmit}>
         <div className="input-group">
           <div className="input-group-prepend">
             {icon}
@@ -65,12 +67,16 @@ const PDFUpload = () => {
           </div>
         </div>
 
-        {/* submit upload button: <input type='submit' value='Upload' className='btn btn-primary btn-block mt-4'/> */}
-      </form>
-      {/* file preview after submission: {uploadedFile ? (
+        {/*
+        submit upload button: <input type='submit' value='Upload' className='btn btn-primary btn-block mt-4'/>
+        */}
+      {/*
+      file preview after submission:
+      {uploadedFile ? (
         <object data={uploadedFile.filePath} type="application/pdf" width="200" height="259">
         </object>
-      ) : null} */}
+      ) : null}
+      */}
     </Fragment>
   );
 };

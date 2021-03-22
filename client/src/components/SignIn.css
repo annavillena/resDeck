@@ -56,7 +56,6 @@
     font-style: normal;
     font-weight: 400;
     font-size: 38px;
-    line-height: 59px;
     /* identical to box height */
 
     display: flex;
@@ -318,7 +317,7 @@
    font-style: normal;
    font-weight: normal;
    font-size: 18px;
-   line-height: 20px;
+   line-height: 24px;
    border-radius: 8px;
 
    background-color: #0D1B4C;
