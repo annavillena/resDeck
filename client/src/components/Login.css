@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+.left-side-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1.5vw;
+}
+
+.right-side-navbar {
+    margin-right: 5vw;
+}
+
+.resDeck {
+    position: absolute;
+    top: 2vh;
+    left: 3vw;
+}
+
+.menu{
+    position: absolute;
+    top: 2vh;
+    left: 95vw;
+}
+
+.swirl{
+    position: absolute;
+    top: 40vh;
+    left: 0vw;
+    width: 100vw;
+    height: 15vh;
+}
+
+.rect{
+    position: absolute;
+    left: 31.04%;
+    right: 30.62%;
+    top: 17%;
+    bottom: 30%;
+
+    background: rgba(120, 194, 195, 0.9);
+    border-radius: 10px;
+}
+
+.loginTitle{
+    position: absolute;
+    left: 45%;
+    top: 27.26%;
+    bottom: 79.98%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 59px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #0D1B4C;
+}
+
+.inputs{
+    position: absolute;
+    left: 39vw;
+    top: 22vh;
+}
+
+.inputBoxFirst{
+    position: absolute;
+    left: 33.24%;
+    right: 51.54%;
+    top: 22.55%;
+    width: 15vw;
+    height: 3vh;
+
+    background: #FFFFFF;
+    border: 1px solid #888888;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inputBoxLast{
+    position: absolute;
+    left: 51.24%;
+    right: 51.54%;
+    top: 22.55%;
+    width: 15vw;
+    height: 3vh;
+
+    background: #FFFFFF;
+    border: 1px solid #888888;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inputBoxEmail{
+    position: absolute;
+    left: 33.24%;
+    right: 51.54%;
+    top: 30.55%;
+    width: 33vw;
+    height: 3vh;
+
+    background: #FFFFFF;
+    border: 1px solid #888888;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inputBoxPass{
+    position: absolute;
+    left: 33.24%;
+    right: 51.54%;
+    top: 38.55%;
+    width: 33vw;
+    height: 3vh;
+
+    background: #FFFFFF;
+    border: 1px solid #888888;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.loginBtn{
+    position: absolute;
+    left: 48vw;
+    top: 60vh;
+}
