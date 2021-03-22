@@ -8,8 +8,6 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 16px;
-    margin-bottom: 16px;
 
     /* Size */
     width: 100%;
@@ -45,17 +43,20 @@ const TimeStamp = (props) => {
     yesterday.setDate(yesterday.getDate() - 1)
     
     /* Determine if date is today or yesterday */
-    if (today.toDateString() === props.date.toDateString()) {
-        date = 'TODAY'
+    if (props.date) {
+        if (today.toDateString() === props.date.toDateString()) {
+            date = 'TODAY'
+        }
+        else if (yesterday.toDateString() === props.date.toDateString()) {
+            date = 'YESTERDAY'
+        }
+        else {
+            date = props.date.toDateString()
+        }
     }
-    else if (yesterday.toDateString() === props.date.toDateString()) {
-        date = 'YESTERDAY'
-    }
-    else {
-        date = props.date.toDateString()
-    }
+    
     return (
-        <Container>
+        <Container className={props.className}>
             <HorizontalLine />
             <h3>{date || 'Date Not found'}</h3>
             <HorizontalLine />

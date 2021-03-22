@@ -53,7 +53,7 @@ const Chat = (props) => {
 
     /* States */
     const [sendMessage, setSendMessage] = useState('')
-    const [messages, setMessages] = useState(props.messages)
+    const [messages, setMessages] = useState(props.messages || [])
 
     /* On ChatBox change */
     const handleSendMessageChange = (e) => {

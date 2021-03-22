@@ -10,20 +10,25 @@ const Container = styled.div`
 `
 
 const Name = styled.h2`
+    /* Font */
     font-family: 'Lato';
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
+
+    /* Margin */
     margin-bottom: 0px;
     margin-top: 0px;
 `
 
 const Time = styled.h3`
+    /* Font */
     font-family: 'Lato';
     font-weight: 300;
     font-size: 18px;
     line-height: 22px;
 
+    /* Margin */
     margin-top: 0px;
     margin-bottom: 5px;
 `
@@ -42,12 +47,15 @@ const MessageContent = styled.p`
     /* Margin */
     margin-top: 0px;
     margin-bottom: 0px;
+
+    /* Misc */
+    white-space: pre-line;
 `
 
 const Message = (props) => {
     if (props.displayHeader) {
         return (
-            <Container user={props.user}>
+            <Container className={props.className} user={props.user}>
                 <Name>{props.name || 'Name not found'}</Name>
                 <Time>{props.time || 'Time not found'}</Time>
                 <MessageContent title={props.time} user={props.user}>{props.messageContent || 'Message not found'}</MessageContent>
@@ -55,7 +63,7 @@ const Message = (props) => {
         )
     }
     return (
-        <Container user={props.user}>
+        <Container className={props.className} user={props.user}>
             <MessageContent title={props.time} user={props.user}>{props.messageContent || 'Message not found'}</MessageContent>
         </Container>
     )
