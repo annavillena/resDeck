@@ -38,13 +38,13 @@ const PDFUpload = (props) => {
 
       setUploadedFile({ fileName, filePath });
 
-      setMessage('File Uploaded');
+      //setMessage('File Uploaded');
     } catch (err) {
-      if (err.response.status === 500) {
-        setMessage('There was a problem with the server');
-      } else {
-        setMessage(err.response.data.msg);
-      }
+      // if (err.response.status === 500) {
+      //   setMessage('There was a problem with the server');
+      // } else {
+      //   setMessage(err.response.data.msg);
+      // }
     }
   };
 
@@ -54,7 +54,7 @@ const PDFUpload = (props) => {
 
   return (
     <Fragment>
-      {message ? <Message msg={message} /> : null}
+      {/* {message ? <Message msg={message} /> : null} */}
         <div className="input-group">
           <div className="input-group-prepend">
             {icon}
