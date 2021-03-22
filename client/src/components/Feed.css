@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.feed-background{
+    background-color: #F3ECC8;
+    width: 100vw;
+    height: 100vh;
+}
+
+._resDeck {
+    position: absolute;
+    top: 2vh;
+    left: 1vw;
+}
+
+._menu{
+    position: absolute;
+    top: 2vh;
+    left: 95vw;
+}
+
+
+.chat{
+    position: absolute;
+    top: 40vh;
+    left: 30vw;  
+}
+
+.like{
+    position: absolute;
+    top: 40vh;
+    left: 65vw;
+}
+
+.rewind{
+    position: absolute;
+    top: 85vh;
+    left: 37vw;
+}
+
+.skip{
+    position: absolute;
+    top: 85vh;
+    left: 47vw;
+}
+
+.save{
+    position: absolute;
+    top: 85vh;
+    left: 57vw;
+}
+
+.sample{
+    position: absolute;
+    top: 10vh;
+    left: 37vw;
+    width: 50vh;
+}
