@@ -197,6 +197,7 @@ const Feed = () => {
                 </svg>
             </div>
 
+            
             <object data={resumes[currentResume].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdf'></object>
 
         </div>

@@ -29,6 +29,7 @@ body {
     top: 45vh;
     right: 70vw;
 }
+
 .like{
     position: absolute;
     top: 45vh;
@@ -91,4 +92,10 @@ body {
 .non-chat {
     transition: opacity 0.1s;
     cursor: pointer;
+}
+
+.tinderCards__cardContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
 }
