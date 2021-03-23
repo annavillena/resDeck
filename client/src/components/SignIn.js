@@ -102,7 +102,7 @@ const SignIn = (props) => {
         const user = await httpUser.signUp(userInfo);
         console.log(user);
         if (user === 200) {
-            const loggedInUser = await httpUser.logIn({email: fields.email, password: fields.password })
+            const loggedInUser = await httpUser.logIn({email: fields.email, password: fields.password });
             if (loggedInUser) {
                 props.setCurrentUser(httpUser.getCurrentUser());
                 props.history.push('/LinkedIn');

@@ -1,36 +1,26 @@
 import React, {useState} from 'react';
 import './Login.css';
-import SampleResume from "./sampleRes.jpg"
-import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap'
-import Feed from "./Feed"
-import SignIn from "./SignIn"
+import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap';
+import httpUser from "../httpUser";
 import { Link, Route} from 'react-router-dom'
 
-const Login = () => {
+const Login = (props) => {
+    const [fields, setFields] = useState({email: "", password: ""});
 
-    const [loggedIn, setLoggedIn] = useState(false);
-    const [user, setUser] = useState("");
-    const [pass, setPass] = useState("");
-    const [noAccount, setNoAccount] = useState(false);
-    const dummyUser = "resDeck@admin.com";
-    const dummyPass = "1234";
+    const onInputChange = (e) => {
+        e.persist();
+        setFields(fields => ({...fields, [e.target.name]: e.target.value}));
+    }
 
-    function onClickButton(user, pass){
-        if(user == dummyUser && pass == dummyPass){
-            setLoggedIn(true);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const loggedInUser = await httpUser.logIn(fields);
+        if (loggedInUser) {
+            props.setCurrentUser(httpUser.getCurrentUser());
+            props.history.push('/Feed');
         }
     }
 
-    function onClickSignUp(){
-        setNoAccount(true);
-    }
-
-    if(loggedIn){
-        return (<Feed/>);
-    }
-    else if(noAccount){
-        return (<SignIn/>);
-    }
     return (
         <div>
 
@@ -43,36 +33,26 @@ const Login = () => {
                 </svg>
             </div>
 
-            <div className = "menu">
-                <svg width="70" height="47" viewBox="0 0 70 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 23.5H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1 1H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1 46H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-
             <div className = "swirl">
                 <svg viewBox="0 0 1440 450" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 50L60.125 66.6667C120.25 83.3333 240.5 116.667 360.75 125C481 133.333 601.25 116.667 721.5 91.6667C841.75 66.6667 962 33.3333 1082.25 16.6667C1202.5 0 1322.75 0 1382.88 0H1443V450H1382.88C1322.75 450 1202.5 450 1082.25 450C962 450 841.75 450 721.5 450C601.25 450 481 450 360.75 450C240.5 450 120.25 450 60.125 450H0V50Z" fill="#F3ECC8"/>
                 </svg>
             </div>
 
-           <div className="rectLogin">
-               <div className = "emailHeadingLogin">Email</div>
-               <input type="text" onInput={e => {setUser(e.target.value)}} className="inputBoxEmailLogin"/>
-               <div className = "passHeadingLogin">Password</div>
-               <input type="text" onInput={e => {setPass(e.target.value)}} className="inputBoxPassLogin"/>
-               <div className = "noAccountLogin">Don't have an account yet?</div>
-               <div className = "noAccountBoldLogin"><b onClick = {() => {onClickSignUp()}}>Sign Up</b></div>
-           </div>
-
-
-           <div className = "loginTitle">Log In</div>
-       
-           <div className='loginBtnPosition'><Button className="loginBtn" onClick = {()=>{onClickButton(user, pass)}}>LOGIN</Button></div>
-           
-         
-
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <div className="rectLogin">
+                        <div className = "emailHeadingLogin">Email</div>
+                        <input type="text" name="email" value={fields.email} onChange={onInputChange} className="inputBoxEmailLogin"/>
+                        <div className = "passHeadingLogin">Password</div>
+                        <input type="password" name="password" value={fields.password} onChange={onInputChange} className="inputBoxPassLogin"/>
+                        <div className = "noAccountLogin">Don't have an account yet?</div>
+                        <div className = "noAccountBoldLogin"><Link to='/signup' style={{color: "#0D1B4C"}}>Sign Up</Link></div>
+                    </div>
+                    <div className = "loginTitle">Log In</div>
+                    <div className='loginBtnPosition'><Button className="loginBtn" type='submit'>LOGIN</Button></div>
+                </form>
+            </div>
         </div>
     )
 }
