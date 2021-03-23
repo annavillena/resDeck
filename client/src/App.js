@@ -6,6 +6,7 @@ import NavBar from "./components/Header/NavBar";
 import SignIn from "./components/SignIn";
 import Feed from "./components/Feed";
 import Login from "./components/Login";
+import LinkedIn from "./components/LinkedIn";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <Switch>
         <Route exact path="/Home" component={Feed} />
         <Route exact path="/Login" component={Login} />
+        <Route exact path="/LinkedIn" component={LinkedIn} />
         <Route exact path="/">
           <Redirect to="/Login" />
         </Route>
