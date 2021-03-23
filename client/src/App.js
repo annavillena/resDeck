@@ -7,6 +7,7 @@ import Feed from "./components/Feed";
 import httpUser from "./httpUser";
 import NavBar from "./components/NavBar/NavBar";
 import Logout from "./Logout";
+import Login from "./components/Login";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(httpUser.getCurrentUser());
@@ -33,6 +34,9 @@ const App = () => {
         <Route path="/Logout" render={(props) => {
             return <Logout Logout={OnLogout} />
         }}/>
+        <Route path="/Login" render={(props) => {
+            return <Login {...props} setCurrentUser={setCurrentUser}/>
+        }} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>

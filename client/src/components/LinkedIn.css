@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.resDeck {
+    position: absolute;
+    top: 2vh;
+    left: 3vw;
+}
+
+.menu{
+    position: absolute;
+    top: 2vh;
+    left: 95vw;
+}
+
+.swirl{
+    position: absolute;
+    top: 40vh;
+    left: 0vw;
+    width: 100vw;
+    height: 15vh;
+}
+
+.rectLinked{
+    position: absolute;
+    left: 28vw;
+    top: 17vh;
+    width: 46vw;
+    height: 40vh;
+
+    background: rgba(120, 194, 195, 0.9);
+    border-radius: 10px;
+}
+
+.linkedinTitle{
+    position: absolute;
+    left: 42vw;
+    top: 23vh;
+    bottom: 79.98%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 59px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #0D1B4C;
+}
+
+.linkedinHeading{
+    position: absolute;
+    left: 9.06%;
+    top: 33.79%;
+
+    /* Sign Up Text */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #3F6699;
+    background-color:transparent;
+}
+
+.inputBoxLinkedIn{
+    position: absolute;
+    left: 9.06%;
+    top: 42.48%;
+    width: 38vw;
+
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.nextBtnPosition{
+   position: absolute;
+   top: 45%;
+   left: 46%;
+}
+
+.nextBtn{
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 18px;
+   line-height: 24px;
+   border-radius: 8px;
+   height: 5vh;
+   width: 10vw;
+
+   background-color: #0D1B4C;
+   color:#F3ECC8;
+}
+
+.skipStep{
+    position: absolute;
+    top: 42vh;
+    left: 35vw;
+
+    /* Sign Up Text */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #78C2C3;
+    background-color: transparent;
+}
