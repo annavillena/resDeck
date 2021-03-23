@@ -49,7 +49,7 @@ const SignIn = () => {
                     <div className="signHeadingEmail">Email</div>
                     <input className = "inputBoxEmail" type="text"/>
                     <div className="signHeadingPass">Password</div>
-                    <input className = "inputBoxPass" type="text"/>
+                    <input className = "inputBoxPass" type="password"/>
                     <div className="signHeadingInterested">Roles that I am Interested in:</div>
                     <input className = "inputBoxInterested" type="text"/>
                </div>

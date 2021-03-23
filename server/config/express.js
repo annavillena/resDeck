@@ -37,7 +37,7 @@ module.exports.init = () => {
 
     const file = req.files.file;
 
-    file.mv(`./client/public/uploads/${file.name}`, err => {
+    file.mv(`./client/src/uploads/${file.name}`, err => {
         if (err) {
         console.error(err);
         return res.status(500).send(err);

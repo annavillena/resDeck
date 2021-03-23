@@ -22,37 +22,48 @@
 
 .chat{
     position: absolute;
-    top: 40vh;
-    left: 30vw;  
+    top: 45vh;
+    right: 70vw;
 }
-
 .like{
     position: absolute;
-    top: 40vh;
-    left: 65vw;
+    top: 45vh;
+    left: 70vw;
 }
 
 .rewind{
     position: absolute;
-    top: 85vh;
-    left: 37vw;
+    top: 92vh;
+    left: 38.5%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);   
 }
 
 .skip{
     position: absolute;
-    top: 85vh;
-    left: 47vw;
+    top: 92vh;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
 }
 
 .save{
     position: absolute;
-    top: 85vh;
-    left: 57vw;
+    top: 92vh;
+    left: 61.2%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
 }
 
-.sample{
+.pdf{
     position: absolute;
-    top: 10vh;
-    left: 37vw;
-    width: 50vh;
+    top: 44%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+
+    height: 82vh;
+    width: 65vh;
+    display: block;
+    outline: none;
 }

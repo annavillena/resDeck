@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './Feed.css';
 import SampleResume from "./sampleRes.jpg"
 import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap'
+import resume from '../uploads/sample_1.pdf'
+
 
 const Feed = () => {
     const [chat, setChat] = useState(false)
@@ -78,9 +80,7 @@ const Feed = () => {
                 </svg>
             </div>
 
-            <div>
-                <img className = "sample" src={SampleResume}></img>
-            </div>
+            <object data={resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdf'></object>
 
         </div>
     )
