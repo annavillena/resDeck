@@ -6,7 +6,7 @@ import httpUser from '../httpUser'
 import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap'
 import './FileUpload.css';
 
-const SignIn = () => {
+const SignIn = (props) => {
     const [fields, setFields] = useState({firstName: "", lastName: "", email: "", password: ""});
     const [userRole, setUserRole] = useState('');
     const [resumeFile, setResumeFile] = useState('');
@@ -80,8 +80,14 @@ const SignIn = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const resumeFilepath = await uploadResume();
-        const imageFilepath = await uploadImage();
+        let resumeFilepath = '';
+        let imageFilepath = '';
+        if (resumeFile !== '') {
+            resumeFilepath = await uploadResume();
+        }
+        if (imageFile !== '') {
+            imageFilepath = await uploadImage();
+        }
         const userInfo = {
             name: fields.firstName + " " + fields.lastName,
             email: fields.email,
@@ -93,11 +99,15 @@ const SignIn = () => {
         };
 
         const user = await httpUser.signUp(userInfo);
+        console.log(user);
         if (user === 200) {
-            console.log("yay")
+            const loggedInUser = await httpUser.logIn({email: fields.email, password: fields.password })
+            if (loggedInUser) {
+                props.setCurrentUser(httpUser.getCurrentUser());
+                props.history.push('/Feed');
+            }
         }
     }
-
 
     const onInputChange = (e) => {
         e.persist();

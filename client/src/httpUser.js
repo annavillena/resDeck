@@ -43,7 +43,7 @@ httpUser.logIn = async function(credentials) {
 httpUser.signUp = async function(userInfo) {
     try {
         const response = await axios.post(config.baseURL + 'api/users', userInfo);
-        if (response.status === 200 && response.data.msg == "User successfully created, token attached") {
+        if (response.status === 200 && response.data.message == "User successfully created, token attached") {
             return 200;
         }
     } catch(err) {
