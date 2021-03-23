@@ -13,8 +13,9 @@ const App = () => {
 
   return (
     <div>
-      {/* <Switch>
+       <Switch>
         <Route exact path="/Home" component={Home} />
+        <Route exact path="/saved-resumes" component={SavedResumes} />
         <Route path="/Signup" render={(props) => {
             return <SignIn {...props} setCurrentUser={setCurrentUser}/>
         }} />
@@ -26,8 +27,7 @@ const App = () => {
           <Redirect to="/Home" />
         </Route>
         <Route component={NotFound}/>
-      </Switch> */}
-        <SavedResumes/>
+      </Switch> 
     </div>
   );
 }
