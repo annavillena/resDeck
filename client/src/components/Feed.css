@@ -59,6 +59,33 @@ body {
     transform: translate(-50%, -50%); 
 }
 
+.non-chat svg circle {
+    transition: r 0.05s, fill 0.1s, stroke 0.1s;
+}
+
+.like:hover circle, .skip:hover circle, .chat:hover circle {
+    fill: #5075a6;
+    stroke: #5075a6;
+}
+
+.like:active circle, .skip:active circle, .chat:active circle {
+    fill: #3F6699;
+    stroke: #3F6699;
+    r: 37px;
+}
+
+.rewind:hover circle, .save:hover circle {
+    fill: #6abcbd;
+    stroke: #6abcbd;
+}
+
+.rewind:active circle, .save:active circle{
+    fill: #78C2C3;
+    stroke: #78C2C3;
+    r: 37px;
+
+}
+
 .pdf{
     position: absolute;
     top: 44%;
