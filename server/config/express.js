@@ -6,6 +6,7 @@ const path = require('path'),
     UserRouter = require('../routes/UserRouter'),
     exampleRouter = require('../routes/examples.server.routes');
     fileUpload = require('express-fileupload');
+    cors = require('cors');
 
 module.exports.init = () => {
     /* 
@@ -28,7 +29,9 @@ module.exports.init = () => {
     // body parsing middleware
     app.use(bodyParser.json());
 
+    app.use(cors());
 
+    //file upload
     app.use(fileUpload());
 
     // Upload Endpoint

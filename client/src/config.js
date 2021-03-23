@@ -2,5 +2,5 @@
 //'config.js' is usually ignored by git to protect sensitive information, such as your database's username and password
 
 module.exports = {
-    baseURL: "http://localhost:5000"
+    baseURL: "http://localhost:5000/"
 };

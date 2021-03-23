@@ -7,6 +7,8 @@ const User = new mongoose.Schema({
     password: { type: String, required: true },
     isJobSeeker: { type: Boolean, default: false },
     isProfessional: { type: Boolean, default: false },
+    resumeFilepath: { type: String },
+    headshotFilepath: { type: String },
     linkedInProfileURL: { type: String },
     date: { type: Date, default: Date.now }
 });
