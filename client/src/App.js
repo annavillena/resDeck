@@ -30,7 +30,6 @@ const App = () => {
         <Route path="/Feed" render={(props) => {
             return <Feed {...props} currentUserName={currentUser.name} setChatIsOpen={setChatIsOpen}/>
         }} />
-        {/* <Route exact path="/Feed" component={Feed} /> */}
         <Route path="/Logout" render={(props) => {
             return <Logout Logout={OnLogout} />
         }}/>
