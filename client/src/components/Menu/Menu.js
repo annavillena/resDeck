@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import './Menu.css'
 import NotificationBadge from './NotificationBadge'
 
 const MenuContainer = styled.div`
-    display: none;
+    opacity: 0;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -33vw;
     width: 33vw;
     height: 100vh;
     background-color: #0D1B4C;
     color: #F3ECC8;
+    z-index: 99;
+    transition: right 0.375s, opacity 0.01s;
 
     #close {
         float: right;
@@ -85,9 +87,26 @@ const MenuOptions = styled.div`
 
 
 const Menu = (props) => {
+
+    const [visible, setVisible] = useState(false)
+
+    const toggleMenu = () => {
+        if (visible) {
+            document.getElementById('menu').style.transition = 'right 0.375s, opacity 2s'
+            document.getElementById('menu').style.right = '-33vw'
+            document.getElementById('menu').style.opacity = '0'
+        }
+        else {
+            document.getElementById('menu').style.transition = 'right 0.375s, opacity 0.01s'
+            document.getElementById('menu').style.right = '0'
+            document.getElementById('menu').style.opacity = '1'
+        }
+        setVisible(!visible)
+    }
+
     return (
         <div id='menu-wrapper'>
-            <svg id='hamburger-menu' onClick={() => {document.getElementById('menu').style.display = 'block'}} width="70" height="47" viewBox="0 0 70 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id='hamburger-menu' onClick={toggleMenu} width="70" height="47" viewBox="0 0 70 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 23.5H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M1 1H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M1 46H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -95,7 +114,7 @@ const Menu = (props) => {
             
             <MenuContainer id='menu'>
 
-                <svg id='close' onClick={() => {document.getElementById('menu').style.display = 'none'}} width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id='close' onClick={toggleMenu} width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M28.7049 1L1 27" stroke="#F3ECC8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M1 1L28.7049 27" stroke="#F3ECC8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
