@@ -3,8 +3,10 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
+    UserRouter = require('../routes/UserRouter'),
     exampleRouter = require('../routes/examples.server.routes');
     fileUpload = require('express-fileupload');
+    cors = require('cors');
 
 module.exports.init = () => {
     /* 
@@ -12,7 +14,8 @@ module.exports.init = () => {
         - reference README for db uri
     */
     mongoose.connect(process.env.DB_URI || require('./config').db.uri, {
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true
     });
     mongoose.set('useCreateIndex', true);
     mongoose.set('useFindAndModify', false);
@@ -25,6 +28,8 @@ module.exports.init = () => {
 
     // body parsing middleware
     app.use(bodyParser.json());
+
+    app.use(cors());
 
     app.use(fileUpload());
 
@@ -53,6 +58,7 @@ module.exports.init = () => {
     // });
 
     // add a router
+    app.use('/api/users', UserRouter);
     app.use('/api/example', exampleRouter);
 
     if (process.env.NODE_ENV === 'production') {
