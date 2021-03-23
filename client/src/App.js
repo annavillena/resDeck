@@ -6,13 +6,14 @@ import SignIn from "./components/SignIn";
 import Feed from "./components/Feed";
 import httpUser from "./httpUser";
 import Login from "./components/Login"
+import SavedResumes from "./components/SavedResumes"
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(httpUser.getCurrentUser());
 
   return (
     <div>
-      <Switch>
+      {/* <Switch>
         <Route exact path="/Home" component={Home} />
         <Route path="/Signup" render={(props) => {
             return <SignIn {...props} setCurrentUser={setCurrentUser}/>
@@ -25,7 +26,8 @@ const App = () => {
           <Redirect to="/Home" />
         </Route>
         <Route component={NotFound}/>
-      </Switch>
+      </Switch> */}
+        <SavedResumes/>
     </div>
   );
 }

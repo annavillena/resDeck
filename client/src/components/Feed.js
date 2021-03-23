@@ -156,10 +156,6 @@ const Feed = () => {
                 </svg>
             </div> */}
 
-            <div class='non-chat'>
-                <NavBar />
-            </div>
-
             <div className = "chat non-chat" onClick={()=>goChat()}>
                 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="40" cy="40" r="38.5" fill="#3F6699" stroke="#3F6699" stroke-width="3"/>
@@ -199,6 +195,10 @@ const Feed = () => {
 
             <object data={resumes[currentResume].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdf'></object>
 
+            <div class='non-chat'>
+                <NavBar />
+            </div>
+            
         </div>
     )
    
