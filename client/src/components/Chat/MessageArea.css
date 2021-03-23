@@ -1,0 +1,12 @@
+
+.timestamp:nth-of-type(1), .message + .timestamp {
+    margin-top: 16px;
+}
+
+.last-message {
+    margin-bottom: 16px;
+}
+
+.message + .message, .message + .last-message {
+    margin-top: 8px;
+}
