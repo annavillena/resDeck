@@ -4,7 +4,7 @@ import Logo from '../Logo'
 import Menu from '../Menu/Menu'
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = (props) => {
     return (
         <div>
             <div id='nav-container'>
@@ -15,7 +15,7 @@ const NavBar = () => {
                 </div>
 
                 <div className='right-side-navbar'>
-                    <Menu />
+                    <Menu currentUserName={props.currentUserName}/>
                 </div>
             </div>
         </div>
