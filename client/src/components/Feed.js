@@ -4,9 +4,27 @@ import SampleResume from "./sampleRes.jpg"
 import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap'
 import resume from '../uploads/sample_1.pdf'
 
-
 const Feed = () => {
-    const [chat, setChat] = useState(false)
+    const [chat, setChat] = useState(false);
+
+    // const testFolder = '../uploads/';
+
+    // fs.readdirSync(testFolder).forEach(file => {
+    //     console.log(file);
+    // });
+
+    // async function next() {
+    //     try {
+    //       const res = await axios.get('/upload', {
+    //         params: {
+    //           'folderPath': '../uploads/'
+    //         }
+    //       });
+    //       console.log(response);
+    //     } catch(err){
+    //         console.error(error);
+    //     }
+    // }
 
     function goChat(){
         if(chat)
