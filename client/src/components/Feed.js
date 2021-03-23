@@ -19,8 +19,9 @@ const ChatContainer = styled.div`
     width: 33vw;
     height: 100vh;
     z-index: 99;
+    opacity: 0;
 
-    transition: left 0.5s;
+    transition: left 0.5s, opacity 0.01s;
 `
 
 const ResumeContainer = styled.div`
@@ -87,21 +88,24 @@ const Feed = () => {
 
     function goChat() {
         if (chat) {
-            setChat(false)
+            document.getElementById('test-chat').style.transition = 'left 0.5s, opacity 2s'
             document.getElementById('test-chat').style.left = '-33vw'
+            document.getElementById('test-chat').style.opacity = '0'
             document.getElementById('close-chat-button').style.right = '-60px'
             document.getElementsByClassName('pdf')[0].style.left = '50%'
             document.getElementsByClassName('pdf')[0].style.top = '44%'
             document.querySelectorAll('.non-chat').forEach(e => e.style.opacity = '1')
         }
         else {
-            setChat(true)
+            document.getElementById('test-chat').style.transition = 'left 0.5s, opacity 0.01s'
             document.getElementById('test-chat').style.left = '0'
+            document.getElementById('test-chat').style.opacity = '1'
             document.getElementById('close-chat-button').style.right = '40px'
             document.getElementsByClassName('pdf')[0].style.left = '62.5%'
             document.getElementsByClassName('pdf')[0].style.top = '50%'
             document.querySelectorAll('.non-chat').forEach(e => e.style.opacity = '0')
         }
+        setChat(!chat)
     }
     
     const nextResume = () => {
