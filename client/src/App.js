@@ -5,6 +5,7 @@ import NotFound from "./views/NotFound";
 import SignIn from "./components/SignIn";
 import Feed from "./components/Feed";
 import httpUser from "./httpUser";
+import Login from "./components/Login"
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(httpUser.getCurrentUser());
@@ -15,6 +16,9 @@ const App = () => {
         <Route exact path="/Home" component={Home} />
         <Route path="/Signup" render={(props) => {
             return <SignIn {...props} setCurrentUser={setCurrentUser}/>
+        }} />
+        <Route path="/login" render={(props) => {
+            return <Login {...props} setCurrentUser={setCurrentUser}/>
         }} />
         <Route exact path="/Feed" component={Feed} />
         <Route exact path="/">

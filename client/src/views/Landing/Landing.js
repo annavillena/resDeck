@@ -136,7 +136,7 @@ const Home = () =>  {
                 </div>
 
                 <div className='right-side-navbar'>
-                    <Link id='login-button' to='/login'>LOGIN</Link>
+                    <Link id='/login' to='/login'>LOGIN</Link>
                     <Link to='/signup'>
                         <button id='sign-up-button'>SIGN UP</button>
                     </Link>

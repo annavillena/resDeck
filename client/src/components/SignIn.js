@@ -4,10 +4,12 @@ import SampleResume from "./sampleRes.jpg"
 import axios from 'axios'
 import httpUser from '../httpUser'
 import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap'
+import LinkedIn from "./LinkedIn"
 import './FileUpload.css';
 
 const SignIn = (props) => {
     const [fields, setFields] = useState({firstName: "", lastName: "", email: "", password: ""});
+    const [signedIn, setSignedIn] = useState(false);
     const [userRole, setUserRole] = useState('');
     const [resumeFile, setResumeFile] = useState('');
     const [resumeFilename, setResumeFilename] = useState('Choose Resume PDF');
@@ -32,6 +34,10 @@ const SignIn = (props) => {
         setImageFile(e.target.files[0]);
         setImageFilename(e.target.files[0].name);
     };
+
+    function onCreateAccount(){
+        setSignedIn(true);
+    }
   
     const uploadResume = async () => {
       const formData = new FormData();
@@ -118,6 +124,9 @@ const SignIn = (props) => {
         setUserRole(e.target.value);
     }
 
+    if(signedIn){
+        return (<LinkedIn/>)
+    }
     return (
         <div>
             <div className = "resDeck">
@@ -143,7 +152,7 @@ const SignIn = (props) => {
                 </svg>
             </div>
 
-            <div className="rect"></div>
+            <div className="rectSignIn"></div>
             <div className="signUpTitle">Sign Up</div>
             <div>
                 <form onSubmit={handleSubmit}>
@@ -152,9 +161,9 @@ const SignIn = (props) => {
                     <div className="signHeadingLast">Last Name</div>
                     <input className = "inputBoxLast" type="text" name='lastName' value={fields.lastName} onChange={onInputChange}/>
                     <div className="signHeadingEmail">Email</div>
-                    <input className = "inputBoxEmail" type="text" name='email' value={fields.email} onChange={onInputChange}/>
+                    <input className = "inputBoxEmailSignIn" type="text" name='email' value={fields.email} onChange={onInputChange}/>
                     <div className="signHeadingPass">Password</div>
-                    <input className = "inputBoxPass" type="password" name='password' value={fields.password} onChange={onInputChange}/>
+                    <input className = "inputBoxPassSignIn" type="password" name='password' value={fields.password} onChange={onInputChange}/>
                     <div className="signHeadingInterested">Roles that I am Interested in:</div>
                     <input className = "inputBoxInterested" type="text"/>
 
@@ -199,7 +208,7 @@ const SignIn = (props) => {
                             </Fragment>    
                         </div>
             
-                    <div className='signBtnPosition'><Button className="signBtn" type='submit'>CREATE ACCOUNT</Button></div>
+                    <div className='signBtnPosition'><Button className="signBtn" type='submit' onClick ={()=>onCreateAccount()}>CREATE ACCOUNT</Button></div>
                 </form>
             </div>
         </div>
