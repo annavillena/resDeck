@@ -48,9 +48,6 @@ const SavedResumes = () => {
                 </svg>
             </div>
 
-            <div class='non-chat'>
-                <NavBar />
-            </div>
 
             <div className = "savedTitle">Saved Resumes</div>
             <div>
@@ -59,7 +56,12 @@ const SavedResumes = () => {
                 <object data={resumes[2].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdfSaved3'></object>
                 <object data={resumes[4].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdfSaved4'></object>
             </div>
+            
             <div className = "allResumes"/>
+
+            <div class='non-chat'>
+                <NavBar />
+            </div>
 
         </div>
     )
