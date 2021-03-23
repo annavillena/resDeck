@@ -8,6 +8,7 @@ import httpUser from "./httpUser";
 import NavBar from "./components/NavBar/NavBar";
 import Logout from "./Logout";
 import Login from "./components/Login";
+import LinkedIn from "./components/LinkedIn"
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(httpUser.getCurrentUser());
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/Login" render={(props) => {
             return <Login {...props} setCurrentUser={setCurrentUser}/>
         }} />
+        <Route exact path="/LinkedIn" component={LinkedIn} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>

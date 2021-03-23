@@ -9,7 +9,6 @@ import './FileUpload.css';
 
 const SignIn = (props) => {
     const [fields, setFields] = useState({firstName: "", lastName: "", email: "", password: ""});
-    const [signedIn, setSignedIn] = useState(false);
     const [userRole, setUserRole] = useState('');
     const [resumeFile, setResumeFile] = useState('');
     const [resumeFilename, setResumeFilename] = useState('Choose Resume PDF');
@@ -34,10 +33,6 @@ const SignIn = (props) => {
         setImageFile(e.target.files[0]);
         setImageFilename(e.target.files[0].name);
     };
-
-    function onCreateAccount(){
-        setSignedIn(true);
-    }
   
     const uploadResume = async () => {
       const formData = new FormData();
@@ -110,7 +105,7 @@ const SignIn = (props) => {
             const loggedInUser = await httpUser.logIn({email: fields.email, password: fields.password })
             if (loggedInUser) {
                 props.setCurrentUser(httpUser.getCurrentUser());
-                props.history.push('/Feed');
+                props.history.push('/LinkedIn');
             }
         }
     }
@@ -124,9 +119,6 @@ const SignIn = (props) => {
         setUserRole(e.target.value);
     }
 
-    if(signedIn){
-        return (<LinkedIn/>)
-    }
     return (
         <div>
             <div className = "resDeck">
@@ -200,7 +192,7 @@ const SignIn = (props) => {
                             </Fragment>    
                         </div>
             
-                    <div className='signBtnPosition'><Button className="signBtn" type='submit' onClick ={()=>onCreateAccount()}>CREATE ACCOUNT</Button></div>
+                    <div className='signBtnPosition'><Button className="signBtn" type='submit'>CREATE ACCOUNT</Button></div>
                 </form>
             </div>
         </div>
