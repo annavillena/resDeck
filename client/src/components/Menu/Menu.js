@@ -120,7 +120,7 @@ const Menu = (props) => {
                 </svg>
 
                 <Link to='/profile'>
-                    <h1>{props.name || 'Wally Worker'}</h1>
+                    <h1>{props.currentUserName || 'Wally Worker'}</h1>
                 </Link>
 
                 <MenuOptions>
@@ -144,7 +144,7 @@ const Menu = (props) => {
                     </Link>
                 </MenuOptions>
 
-                <Link to='/'>
+                <Link to='/Logout'>
                     <LogoutContainer>
                         <h2>LOGOUT</h2>
                         <svg width="34" height="31" viewBox="0 0 34 31" fill="none" xmlns="http://www.w3.org/2000/svg">
