@@ -36,7 +36,7 @@ const ResumeContainer = styled.div`
 `
 
 
-const Feed = () => {
+const Feed = (props) => {
     const [chat, setChat] = useState(false)
     const [currentResume, setCurrentResume] = useState(0)
     const [currentMessages, setCurrentMessages] = useState([])
@@ -106,6 +106,7 @@ const Feed = () => {
             document.querySelectorAll('.non-chat').forEach(e => e.style.opacity = '0')
         }
         setChat(!chat)
+        props.setChatIsOpen(!chat)
     }
     
     const nextResume = () => {
@@ -135,7 +136,7 @@ const Feed = () => {
             <div className='feed-background'></div>
 
             <ChatContainer id='test-chat' >
-                <Chat user='Wally Worker' otherUser={resumes[currentResume].name} messages={currentMessages} />
+                <Chat user={props.currentUserName} otherUser={resumes[currentResume].name} messages={currentMessages} />
             </ChatContainer>
 
             <svg id='close-chat-button' onClick={goChat} width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">

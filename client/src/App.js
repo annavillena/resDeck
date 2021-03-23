@@ -10,6 +10,7 @@ import Logout from "./Logout";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(httpUser.getCurrentUser());
+  const [chatIsOpen, setChatIsOpen] = useState(false);
   const OnLogout = () => {
     httpUser.logOut();
     setCurrentUser(null);
@@ -18,7 +19,7 @@ const App = () => {
   return (
     <div>
       {
-        currentUser && 
+        currentUser && !chatIsOpen &&
         <NavBar currentUserName={currentUser.name}/>
       }
       <Switch>
@@ -26,7 +27,10 @@ const App = () => {
         <Route path="/Signup" render={(props) => {
             return <SignIn {...props} setCurrentUser={setCurrentUser}/>
         }} />
-        <Route exact path="/Feed" component={Feed} />
+        <Route path="/Feed" render={(props) => {
+            return <Feed {...props} currentUserName={currentUser.name} setChatIsOpen={setChatIsOpen}/>
+        }} />
+        {/* <Route exact path="/Feed" component={Feed} /> */}
         <Route path="/Logout" render={(props) => {
             return <Logout Logout={OnLogout} />
         }}/>
