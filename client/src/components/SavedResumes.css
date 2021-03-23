@@ -34,8 +34,8 @@
 
 .savedTitle{
     position: absolute;
-    left: 40vw;
-    top: 16vh;
+    left: 42vw;
+    top: 13vh;
     bottom: 79.98%;
 
     font-family: Montserrat;
@@ -54,10 +54,10 @@
 
 .pdfSaved1{
     position: absolute;
-    top: 24vh;
+    top: 10vh;
     left: 15vw;;
 
-    height: 48vh;
+    height: 72vh;
     width: 60vh;
     display: block;
     outline: none;
@@ -67,10 +67,10 @@
 
 .pdfSaved2{
     position: absolute;
-    top: 24vh;
+    top: 10vh;
     left: 55vw;;
 
-    height: 48vh;
+    height: 72vh;
     width: 60vh;
     display: block;
     outline: none;
@@ -80,10 +80,10 @@
 
 .pdfSaved3{
     position: absolute;
-    top: 80vh;
+    top: 90vh;
     left: 15vw;;
 
-    height: 48vh;
+    height: 72vh;
     width: 60vh;
     display: block;
     outline: none;
@@ -93,10 +93,10 @@
 
 .pdfSaved4{
     position: absolute;
-    top: 80vh;
+    top: 90vh;
     left: 55vw;;
 
-    height: 48vh;
+    height: 72vh;
     width: 60vh;
     display: block;
     outline: none;
@@ -106,9 +106,11 @@
 
 .allResumes{
     position: absolute;
-    left: 99vw;
-    top: 30vh;
-    height: 50vh;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+    left: 3vw;
+    top: 20vh;
+    height: 70vh;
+    width: 90vw;
+    
+    overflow-y: auto;
+    
 }

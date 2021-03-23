@@ -50,14 +50,13 @@ const SavedResumes = () => {
 
 
             <div className = "savedTitle">Saved Resumes</div>
-            <div>
+            <div className = "allResumes">
                 <object data={resumes[0].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdfSaved1'></object>
                 <object data={resumes[1].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdfSaved2'></object>
                 <object data={resumes[2].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdfSaved3'></object>
                 <object data={resumes[4].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdfSaved4'></object>
             </div>
-            
-            <div className = "allResumes"/>
+
 
             <div class='non-chat'>
                 <NavBar />
