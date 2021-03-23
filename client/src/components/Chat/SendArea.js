@@ -53,7 +53,7 @@ const ChatBox = styled.textarea`
     /* Misc */
     border: none;
     resize: none;
-    overflow: scroll;
+    overflow: auto;
 
     ::placeholder {
         color: #888888;

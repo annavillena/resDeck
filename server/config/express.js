@@ -31,26 +31,31 @@ module.exports.init = () => {
 
     app.use(cors());
 
-    //file upload
     app.use(fileUpload());
 
     // Upload Endpoint
     app.post('/upload', (req, res) => {
-    if (req.files === null) {
-        return res.status(400).json({ msg: 'No file uploaded' });
-    }
-
-    const file = req.files.file;
-
-    file.mv(`./client/public/uploads/${file.name}`, err => {
-        if (err) {
-        console.error(err);
-        return res.status(500).send(err);
+        if (req.files === null) {
+            return res.status(400).json({ msg: 'No file uploaded' });
         }
 
-        res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+        const file = req.files.file;
+
+        file.mv(`./client/src/uploads/${file.name}`, err => {
+            if (err) {
+            console.error(err);
+            return res.status(500).send(err);
+            }
+
+            res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+        });
     });
-    });
+
+    // app.get('/next', (req, res) => {
+    //     fs.readdirSync(req.folderPath).forEach(file => {
+    //         console.log(file);
+    //     });
+    // });
 
     // add a router
     app.use('/api/users', UserRouter);
