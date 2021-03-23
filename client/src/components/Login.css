@@ -109,7 +109,7 @@
     position: absolute;
     left: 9.06%;
     top: 35.48%;
-    width: 30vw;
+    width: 33vw;
 
     background: #FFFFFF;
     border: 1px solid #C4C4C4;
@@ -121,7 +121,7 @@
     position: absolute;
     left: 9.06%;
     top: 55.55%;
-    width: 30vw;
+    width: 33vw;
 
     background: #FFFFFF;
     border: 1px solid #C4C4C4;
@@ -132,7 +132,7 @@
 .noAccountLogin{
     /* Don’t have an account? Sign up */
     position: absolute;
-    left: 30.44%;
+    left: 28.44%;
     right: 29.17%;
     top: 88.74%;
     bottom: 5.84%;
@@ -152,8 +152,7 @@
 .noAccountBoldLogin{
     /* Don’t have an account? Sign up */
     position: absolute;
-    left: 56.44%;
-    right: 29.17%;
+    left: 60.44%;
     top: 88.74%;
     bottom: 5.84%;
 
