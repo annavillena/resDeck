@@ -9,7 +9,7 @@ const Container = styled.div`
     height: 64.2%;
     padding-left: 16px;
     padding-right: 16px;
-    overflow: scroll;
+    overflow: auto;
     scroll-behavior: smooth;
 `
 

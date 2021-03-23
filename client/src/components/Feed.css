@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+body {
+    overflow: hidden;
+}
+
 .feed-background{
     background-color: #F3ECC8;
     width: 100vw;
@@ -66,4 +70,25 @@
     width: 65vh;
     display: block;
     outline: none;
+
+    transition: left 0.5s, top 0.5s;
+}
+
+#close-chat-button {
+    position: absolute;
+    top: 24px;
+    right: -60px;
+    cursor: pointer;
+    z-index: 99;
+
+    transition: right 0.5s;
+}
+
+.sample-chat {
+    width: 50vh;
+}
+
+.non-chat {
+    transition: opacity 0.1s;
+    cursor: pointer;
 }
