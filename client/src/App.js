@@ -38,7 +38,9 @@ const App = () => {
         <Route path="/Login" render={(props) => {
             return <Login {...props} setCurrentUser={setCurrentUser}/>
         }} />
-        <Route exact path="/LinkedIn" component={LinkedIn} />
+        <Route path="/LinkedIn" render={(props) => {
+            return <LinkedIn {...props} currentUserID={currentUser._id}/>
+        }} />
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>

@@ -9,7 +9,7 @@ const User = new mongoose.Schema({
     isProfessional: { type: Boolean, default: false },
     resumeFilepath: { type: String },
     headshotFilepath: { type: String },
-    linkedInProfileURL: { type: String },
+    linkedInURL: { type: String },
     date: { type: Date, default: Date.now }
 });
 
