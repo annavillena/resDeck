@@ -7,7 +7,7 @@ import SampleResume from "./sampleRes.jpg"
 import resume1 from '../uploads/sample_1.pdf'
 import resume2 from '../uploads/sample_2.pdf'
 import resume3 from '../uploads/sample_3.pdf'
-import resume4 from '../uploads/sample_4.pdf'
+// import resume4 from '../uploads/sample_4.pdf'
 import resume5 from '../uploads/sample_5.pdf'
 import resume6 from '../uploads/sample_6.pdf'
 
@@ -40,6 +40,25 @@ const Feed = (props) => {
     const [chat, setChat] = useState(false)
     const [currentResume, setCurrentResume] = useState(0)
     const [currentMessages, setCurrentMessages] = useState([])
+
+    const checkKey = (e) => {
+        e = e || window.event;
+        // if (e.keyCode == '38') {
+           
+        // }
+        // else if (e.keyCode == '40') {
+        //     // down arrow
+        // }
+        if (e.keyCode == '37' && !chat) {
+            goChat();
+        }
+        else if (e.keyCode == '39' && !chat) {
+            nextResume();
+        }
+    }
+
+    document.onkeydown = checkKey;
+
     const resumes = [
         {
             resume: resume1,
@@ -53,10 +72,10 @@ const Feed = (props) => {
             resume: resume3,
             name: 'Cindy Lou Who'
         }, 
-        {
-            resume: resume4, 
-            name: 'Name'
-        }, 
+        // {
+        //     resume: resume4, 
+        //     name: 'Name'
+        // }, 
         {
             resume: resume5, 
             name: 'Entry Level Resume Guide'
@@ -85,8 +104,6 @@ const Feed = (props) => {
     //         console.error(error);
     //     }
     // }
-
-    console.log(props.currentUserName)
 
     function goChat() {
         if (chat) {
