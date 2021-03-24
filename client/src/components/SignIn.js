@@ -4,6 +4,7 @@ import SampleResume from "./sampleRes.jpg"
 import axios from 'axios'
 import httpUser from '../httpUser'
 import {Button, ButtonGroup, ToggleButton, Radio} from 'react-bootstrap'
+import LinkedIn from "./LinkedIn"
 import './FileUpload.css';
 
 const SignIn = (props) => {
@@ -101,10 +102,10 @@ const SignIn = (props) => {
         const user = await httpUser.signUp(userInfo);
         console.log(user);
         if (user === 200) {
-            const loggedInUser = await httpUser.logIn({email: fields.email, password: fields.password })
+            const loggedInUser = await httpUser.logIn({email: fields.email, password: fields.password });
             if (loggedInUser) {
                 props.setCurrentUser(httpUser.getCurrentUser());
-                props.history.push('/Feed');
+                props.history.push('/LinkedIn');
             }
         }
     }
@@ -129,21 +130,13 @@ const SignIn = (props) => {
                 </svg>
             </div>
 
-            <div className = "menu">
-                <svg width="70" height="47" viewBox="0 0 70 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 23.5H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1 1H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1 46H68.5" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-
             <div className = "swirl">
                 <svg viewBox="0 0 1440 450" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 50L60.125 66.6667C120.25 83.3333 240.5 116.667 360.75 125C481 133.333 601.25 116.667 721.5 91.6667C841.75 66.6667 962 33.3333 1082.25 16.6667C1202.5 0 1322.75 0 1382.88 0H1443V450H1382.88C1322.75 450 1202.5 450 1082.25 450C962 450 841.75 450 721.5 450C601.25 450 481 450 360.75 450C240.5 450 120.25 450 60.125 450H0V50Z" fill="#F3ECC8"/>
                 </svg>
             </div>
 
-            <div className="rect"></div>
+            <div className="rectSignIn"></div>
             <div className="signUpTitle">Sign Up</div>
             <div>
                 <form onSubmit={handleSubmit}>
@@ -152,9 +145,9 @@ const SignIn = (props) => {
                     <div className="signHeadingLast">Last Name</div>
                     <input className = "inputBoxLast" type="text" name='lastName' value={fields.lastName} onChange={onInputChange}/>
                     <div className="signHeadingEmail">Email</div>
-                    <input className = "inputBoxEmail" type="text" name='email' value={fields.email} onChange={onInputChange}/>
+                    <input className = "inputBoxEmailSignIn" type="text" name='email' value={fields.email} onChange={onInputChange}/>
                     <div className="signHeadingPass">Password</div>
-                    <input className = "inputBoxPass" type="password" name='password' value={fields.password} onChange={onInputChange}/>
+                    <input className = "inputBoxPassSignIn" type="password" name='password' value={fields.password} onChange={onInputChange}/>
                     <div className="signHeadingInterested">Roles that I am Interested in:</div>
                     <input className = "inputBoxInterested" type="text"/>
 

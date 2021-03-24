@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.left-side-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1.5vw;
+}
+
+.right-side-navbar {
+    margin-right: 5vw;
+}
+
+.resDeck {
+    position: absolute;
+    top: 2vh;
+    left: 3vw;
+}
+
+.menu{
+    position: absolute;
+    top: 2vh;
+    left: 95vw;
+}
+
+.swirl{
+    position: absolute;
+    top: 40vh;
+    left: 0vw;
+    width: 100vw;
+    height: 15vh;
+}
+
+.rectLogin{
+    position: absolute;
+    left: 32vw;
+    top: 15vh;
+    width: 40vw;
+    height: 60vh;
+
+    background: rgba(120, 194, 195, 0.9);
+    border-radius: 10px;
+}
+
+.loginTitle{
+    position: absolute;
+    left: 47vw;
+    top: 25vh;
+    bottom: 79.98%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 59px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #0D1B4C;
+}
+
+.emailHeadingLogin{
+    position: absolute;
+    left: 9.06%;
+    right: 57.25%;
+    top: 28.79%;
+    bottom: 65.8%;
+
+    /* Sign Up Text */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #0D1B4C;
+    background-color:transparent;
+}
+
+.passHeadingLogin{
+    position: absolute;
+    left: 9.06%;
+    right: 63.82%;
+    top: 48.65%;
+    bottom: 45.7%;
+
+    /* Sign Up Text */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #0D1B4C;
+    background-color: transparent;
+}
+
+.inputBoxEmailLogin{
+    position: absolute;
+    left: 9.06%;
+    top: 35.48%;
+    width: 33vw;
+
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inputBoxPassLogin{
+    position: absolute;
+    left: 9.06%;
+    top: 55.55%;
+    width: 33vw;
+
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.noAccountLogin{
+    /* Don’t have an account? Sign up */
+    position: absolute;
+    left: 28.44%;
+    right: 29.17%;
+    top: 88.74%;
+    bottom: 5.84%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+
+    color: #0D1B4C;
+    background-color: transparent;
+}
+
+.noAccountBoldLogin{
+    /* Don’t have an account? Sign up */
+    position: absolute;
+    left: 60.44%;
+    top: 88.74%;
+    bottom: 5.84%;
+
+    font-family: Montserrat;
+    font-style: bold;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+
+    color: #0D1B4C;
+    background-color: transparent;
+}
+
+b{
+    background-color:transparent
+}
+
+.loginBtnPosition{
+   position: absolute;
+   top: 58%;
+   left: 46%;
+}
+
+.loginBtn{
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 18px;
+   line-height: 24px;
+   border-radius: 8px;
+   height: 5vh;
+   width: 10vw;
+
+   background-color: #0D1B4C;
+   color:#F3ECC8;
+}

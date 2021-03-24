@@ -7,7 +7,7 @@ import SampleResume from "./sampleRes.jpg"
 import resume1 from '../uploads/sample_1.pdf'
 import resume2 from '../uploads/sample_2.pdf'
 import resume3 from '../uploads/sample_3.pdf'
-import resume4 from '../uploads/sample_4.pdf'
+// import resume4 from '../uploads/sample_4.pdf'
 import resume5 from '../uploads/sample_5.pdf'
 import resume6 from '../uploads/sample_6.pdf'
 
@@ -36,10 +36,29 @@ const ResumeContainer = styled.div`
 `
 
 
-const Feed = () => {
+const Feed = (props) => {
     const [chat, setChat] = useState(false)
     const [currentResume, setCurrentResume] = useState(0)
     const [currentMessages, setCurrentMessages] = useState([])
+
+    const checkKey = (e) => {
+        e = e || window.event;
+        // if (e.keyCode == '38') {
+           
+        // }
+        // else if (e.keyCode == '40') {
+        //     // down arrow
+        // }
+        if (e.keyCode == '37' && !chat) {
+            goChat();
+        }
+        else if (e.keyCode == '39' && !chat) {
+            nextResume();
+        }
+    }
+
+    document.onkeydown = checkKey;
+
     const resumes = [
         {
             resume: resume1,
@@ -53,10 +72,10 @@ const Feed = () => {
             resume: resume3,
             name: 'Cindy Lou Who'
         }, 
-        {
-            resume: resume4, 
-            name: 'Name'
-        }, 
+        // {
+        //     resume: resume4, 
+        //     name: 'Name'
+        // }, 
         {
             resume: resume5, 
             name: 'Entry Level Resume Guide'
@@ -106,6 +125,7 @@ const Feed = () => {
             document.querySelectorAll('.non-chat').forEach(e => e.style.opacity = '0')
         }
         setChat(!chat)
+        props.setChatIsOpen(!chat)
     }
     
     const nextResume = () => {
@@ -135,7 +155,7 @@ const Feed = () => {
             <div className='feed-background'></div>
 
             <ChatContainer id='test-chat' >
-                <Chat user='Wally Worker' otherUser={resumes[currentResume].name} messages={currentMessages} />
+                <Chat user={props.currentUserName || 'Wally Worker'} otherUser={resumes[currentResume].name} messages={currentMessages} />
             </ChatContainer>
 
             <svg id='close-chat-button' onClick={goChat} width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -200,6 +220,7 @@ const Feed = () => {
                 </svg>
             </div>
 
+            
             <object data={resumes[currentResume].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" className='pdf'></object>
 
         </div>
