@@ -108,7 +108,7 @@ const Feed = (props) => {
             document.querySelectorAll('.non-chat').forEach(e => e.style.opacity = '0')
         }
         setChat(!chat)
-        // props.setChatIsOpen(!chat)
+        props.setChatIsOpen(!chat)
     }
     
     const nextResume = () => {
