@@ -268,7 +268,7 @@ const Feed = (props) => {
 
         else if (previousValues.current.saving != saving) {
             const currentPdf = document.getElementById('current-pdf')
-            currentPdf.style.animation = 'fadeoutin 2s linear forwards'
+            currentPdf.style.animation = 'fadeoutin 1s linear forwards'
 
             const savedHeader = document.getElementById('savedHeader')
 
