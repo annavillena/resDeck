@@ -3,6 +3,7 @@
 
 body {
     overflow: hidden;
+    background-color: #F3ECC8;
 }
 
 .feed-background{
@@ -87,7 +88,24 @@ body {
 
 }
 
-.pdf{
+#current-pdf{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+
+    height: 84vh;
+    width: 65vh;
+    display: block;
+    outline: none;
+
+    transition: left 0.5s, top 0.5s;
+    z-index: 5;
+}
+
+#next-pdf{
+    visibility: hidden;
     position: absolute;
     top: 44%;
     left: 50%;
@@ -98,8 +116,23 @@ body {
     width: 65vh;
     display: block;
     outline: none;
+    
+    z-index: 4;
+}
 
-    transition: left 0.5s, top 0.5s;
+#previous-pdf {
+    position: absolute;
+    top: -82vh;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+
+    height: 82vh;
+    width: 65vh;
+    display: block;
+    outline: none;
+
+    z-index: 6;
 }
 
 #close-chat-button {

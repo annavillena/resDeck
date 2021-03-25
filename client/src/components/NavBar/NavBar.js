@@ -8,13 +8,13 @@ const NavBar = (props) => {
     return (
         <div>
             <div id='nav-container'>
-                <div className='left-side-navbar'>
+                <div id='left-side-navbar'>
                     <Link to='/'>
                         <Logo />
                     </Link>
                 </div>
 
-                <div className='right-side-navbar'>
+                <div id='right-side-navbar'>
                     <Menu currentUserName={props.currentUserName}/>
                 </div>
             </div>
