@@ -16,31 +16,65 @@ import resume3 from './uploads/sample_3.pdf'
 import resume4 from './uploads/sample_4.pdf'
 import resume5 from './uploads/sample_5.pdf'
 import resume6 from './uploads/sample_6.pdf'
+import resume7 from './uploads/sample_7.pdf'
+import resume8 from './uploads/sample_8.pdf'
+import resume9 from './uploads/sample_9.pdf'
+import resume10 from './uploads/sample_10.pdf'
+import resume11 from './uploads/sample_11.pdf'
+import resume12 from './uploads/sample_12.pdf'
 
 const App = () => {
   const [sResumes, setSavedResumes] = useState([])
-  const [resumes, setResumes] = useState( [
-  {
-      resume: resume1,
-      name: 'Cocoa Touch',
-  }, 
-  {
-      resume: resume2,
-      name: 'Abigail Berns'
-  }, 
-  {
-      resume: resume3,
-      name: 'Cindy Lou Who'
-  }, 
-  {
-      resume: resume5, 
-      name: 'Entry Level Resume Guide'
-  }, 
-  {
-      resume: resume6, 
-      name: 'Sam Student'
-  }
-]);
+  const [resumes, setResumes] = useState([
+      {
+          resume: resume1,
+          name: 'Cocoa Touch',
+      }, 
+      {
+          resume: resume2,
+          name: 'Abigail Berns'
+      }, 
+      {
+          resume: resume3,
+          name: 'Cindy Lou Who'
+      }, 
+      // {
+      //     resume: resume4, 
+      //     name: 'Name'
+      // }, 
+      // {
+      //     resume: resume5, 
+      //     name: 'Entry Level Resume Guide'
+      // }, 
+      {
+          resume: resume6, 
+          name: 'Sam Student'
+      },
+      {
+          resume: resume7, 
+          name: 'Matthew Winston'
+      },
+      {
+          resume: resume8, 
+          name: 'Craig Novak'
+      },
+      {
+          resume: resume9, 
+          name: 'Jane Sample'
+      },
+      {
+          resume: resume10, 
+          name: 'Nancy Quinn'
+      },
+      {
+          resume: resume11, 
+          name: 'Thomas Miccali'
+      },
+      {
+          resume: resume12, 
+          name: 'Jonathan Philipps'
+      },
+  ]);
   const [currentUser, setCurrentUser] = useState(httpUser.getCurrentUser());
   const [chatIsOpen, setChatIsOpen] = useState(false);
   const OnLogout = () => {

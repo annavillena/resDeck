@@ -43,8 +43,8 @@
 
 .pdfSaved{
 
-    height: 80vh;
-    width: 60vh;
+    height: 100vh;
+    width: 90vh;
     display: block;
     outline: none;
     padding-bottom: 5%;
@@ -92,10 +92,11 @@
 
 .allResumes{
     position: absolute;
-    left: 20vw;
+    left: 24%;
     top: 20vh;
     height: 70vh;
     width: 90vw;
+    padding-top: 20px;
     
     overflow-y: auto;
     
