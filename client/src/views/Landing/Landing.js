@@ -40,7 +40,12 @@ const NavBar = styled.div`
     }
 
     #login-button:hover {
+        color: #0D1B4C;
         text-decoration: underline;
+    }
+
+    #login-button:link, login-button:visited {
+        color: #0D1B4C;
     }
 
     #sign-up-button {
@@ -136,7 +141,7 @@ const Home = () =>  {
                 </div>
 
                 <div className='right-side-navbar'>
-                    <Link id='/login' to='/login'>LOGIN</Link>
+                    <Link style={{color: "#0D1B4C", textDecoration: "none"}} to='/login'>LOGIN</Link>
                     <Link to='/signup'>
                         <button id='sign-up-button'>SIGN UP</button>
                     </Link>
