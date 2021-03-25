@@ -160,9 +160,9 @@ const Feed = (props) => {
             nextPdf.style.visibility = 'visible'
             
             const currentPdf = document.getElementById('current-pdf')
-            currentPdf.style.transition = 'top 0.75s'
-            currentPdf.style.top = '-82vh'
-            currentPdf.style.left = '50%'
+            currentPdf.style.transition = 'left 1s'
+            currentPdf.style.top = '44%'
+            currentPdf.style.left = '248vh'
             
             nextPdf.id = 'current-pdf'
             if (document.getElementById('previous-pdf')) {
@@ -207,9 +207,9 @@ const Feed = (props) => {
             nextPdf.style.visibility = 'visible'
             
             const currentPdf = document.getElementById('current-pdf')
-            currentPdf.style.transition = 'top 0.75s'
+            currentPdf.style.transition = 'top 1s'
             currentPdf.style.left = '50%'
-            currentPdf.style.top = '150vh'
+            currentPdf.style.top = '145vh'
             
             nextPdf.id = 'current-pdf'
             if (document.getElementById('previous-pdf')) {

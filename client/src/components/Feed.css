@@ -100,7 +100,6 @@ body {
     display: block;
     outline: none;
 
-    transition: left 0.5s, top 0.5s;
     z-index: 5;
 }
 
@@ -125,7 +124,7 @@ body {
     top: -82vh;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
 
     height: 84vh;
     width: 65vh;
