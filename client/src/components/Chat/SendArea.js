@@ -81,7 +81,7 @@ const SendArea = (props) => {
 
     return (
         <Container>
-            <ChatBox placeholder='Type a message...' value={props.sendMessage} onChange={props.handleSendMessageChange} onKeyDown={chatEnter} />
+            <ChatBox placeholder='Leave constructive feedback...' value={props.sendMessage} onChange={props.handleSendMessageChange} onKeyDown={chatEnter} />
             <div id='send-button-container' onClick={props.submitSendMessage}>
                 <svg id='send-button' width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 17.0417H33.0833" stroke="#0D1B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

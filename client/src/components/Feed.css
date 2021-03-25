@@ -3,7 +3,7 @@
 
 body {
     overflow: hidden;
-    background-color: #F3ECC8;
+    /* background-color: #F3ECC8; */
 }
 
 .feed-background{
@@ -100,19 +100,18 @@ body {
     display: block;
     outline: none;
 
-    transition: left 0.5s, top 0.5s;
     z-index: 5;
 }
 
 #next-pdf{
     visibility: hidden;
     position: absolute;
-    top: 44%;
+    top: 45%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); 
 
-    height: 82vh;
+    height: 84vh;
     width: 65vh;
     display: block;
     outline: none;
@@ -125,9 +124,9 @@ body {
     top: -82vh;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
 
-    height: 82vh;
+    height: 84vh;
     width: 65vh;
     display: block;
     outline: none;
@@ -158,4 +157,36 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 10vh;
+}
+
+.savedHeader {
+    position: absolute;
+    left: 46.5%;
+    top: 42%;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    z-index: 1000;
+    opacity: 0;
+    /* -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 4s linear forwards; */
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeoutin {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.8; }
 }
