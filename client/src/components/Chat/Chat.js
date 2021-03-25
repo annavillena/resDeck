@@ -80,14 +80,21 @@ const Chat = (props) => {
         setSendMessage('')
     }
 
+    const onLinkedInClick = (e) => {
+        e.preventDefault();
+        window.open(
+            "https://www.linkedin.com/in/williamhgates/", "_blank");
+    }
+
     return (
         <Container>
 
             <Title>
                 <h1>{props.otherUser || 'Other user not found'}</h1>
-                <a href='https://www.linkedin.com/in/williamhgates/'>
+                <a><FaLinkedin id='linkedin-icon' onClick={onLinkedInClick}/></a>
+                {/* <a href='https://www.linkedin.com/in/williamhgates/'>
                     <FaLinkedin id='linkedin-icon' />
-                </a>
+                </a> */}
             </Title>
 
             <MessageArea messages={messages} />
