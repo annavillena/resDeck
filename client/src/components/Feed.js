@@ -6,8 +6,14 @@ import resume1 from '../uploads/sample_1.pdf'
 import resume2 from '../uploads/sample_2.pdf'
 import resume3 from '../uploads/sample_3.pdf'
 // import resume4 from '../uploads/sample_4.pdf'
-import resume5 from '../uploads/sample_5.pdf'
+//import resume5 from '../uploads/sample_5.pdf'
 import resume6 from '../uploads/sample_6.pdf'
+import resume7 from '../uploads/sample_7.pdf'
+import resume8 from '../uploads/sample_8.pdf'
+import resume9 from '../uploads/sample_9.pdf'
+import resume10 from '../uploads/sample_10.pdf'
+import resume11 from '../uploads/sample_11.pdf'
+import resume12 from '../uploads/sample_12.pdf'
 
 
 const ChatContainer = styled.div`
@@ -82,14 +88,38 @@ const Feed = (props) => {
         //     resume: resume4, 
         //     name: 'Name'
         // }, 
-        {
-            resume: resume5, 
-            name: 'Entry Level Resume Guide'
-        }, 
+        // {
+        //     resume: resume5, 
+        //     name: 'Entry Level Resume Guide'
+        // }, 
         {
             resume: resume6, 
             name: 'Sam Student'
-        }
+        },
+        {
+            resume: resume7, 
+            name: 'Matthew Winston'
+        },
+        {
+            resume: resume8, 
+            name: 'Craig Novak'
+        },
+        {
+            resume: resume9, 
+            name: 'Jane Sample'
+        },
+        {
+            resume: resume10, 
+            name: 'Nancy Quinn'
+        },
+        {
+            resume: resume11, 
+            name: 'Thomas Miccali'
+        },
+        {
+            resume: resume12, 
+            name: 'Jonathan Philipps'
+        },
     ]
 
     // const testFolder = '../uploads/';
@@ -128,6 +158,8 @@ const Feed = (props) => {
             currentPdf.style.transition = 'left 0.5s, top 0.5s'
             currentPdf.style.left = '50%'
             currentPdf.style.top = '44%'
+            // currentPdf.style.height = '84vh'
+            // currentPdf.style.width = '65vh'
             document.querySelectorAll('.non-chat').forEach(e => e.style.opacity = '1')
         }
         else {
@@ -146,6 +178,8 @@ const Feed = (props) => {
             currentPdf.style.transition = 'left 0.5s, top 0.5s'
             currentPdf.style.left = '62.5%'
             currentPdf.style.top = '50%'
+            // currentPdf.style.height = '100vh'
+            // currentPdf.style.width = '90vh'
             document.querySelectorAll('.non-chat').forEach(e => e.style.opacity = '0')
         }
         setChat(!chat)

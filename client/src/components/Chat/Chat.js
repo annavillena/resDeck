@@ -85,7 +85,7 @@ const Chat = (props) => {
 
             <Title>
                 <h1>{props.otherUser || 'Other user not found'}</h1>
-                <a href='https://LinkedIn.com/'>
+                <a href='https://www.linkedin.com/in/williamhgates/'>
                     <FaLinkedin id='linkedin-icon' />
                 </a>
             </Title>
