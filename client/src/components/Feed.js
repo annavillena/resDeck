@@ -30,18 +30,20 @@ const Feed = (props) => {
     const [liking, setLiking] = useState(false)
     const [rewinding, setRewinding] = useState(false)
     const [skipping, setSkipping] = useState(false)
+    const [saving, setSaving] = useState(false)
     
-    const previousValues = useRef({ currentResume, liking, rewinding, skipping })
+    const previousValues = useRef({ currentResume, liking, rewinding, skipping, saving })
 
     const checkKey = (e) => {
         e = e || window.event;
         // if (e.keyCode == '38') {
            
         // }
-        // else if (e.keyCode == '40') {
-        //     // down arrow
-        // }
-        if (e.keyCode == '37' && !chat) {
+        if (e.keyCode == '40') {
+            nextResume()
+            setSkipping(true);
+        }
+        else if (e.keyCode == '37' && !chat) {
             toggleChat();
         }
         else if (e.keyCode == '39' && !chat) {
@@ -54,12 +56,12 @@ const Feed = (props) => {
         // }
     }
 
-    document.body.onkeyup = function(e){
-        if((e.keyCode === 32 || e.key === 'Spacebar') && !chat){
-            nextResume()
-            setSkipping(true);
-        }
-    }
+    // document.body.onkeyup = function(e){
+    //     if((e.keyCode === 32 || e.key === 'Spacebar') && !chat){
+    //         nextResume()
+    //         setSkipping(true);
+    //     }
+    // }
 
     document.onkeydown = checkKey;
 
@@ -111,6 +113,11 @@ const Feed = (props) => {
 
     function toggleChat() {
         if (chat) {
+            const el = document.getElementById('savedHeader')
+            el.style.animation = 'none';
+            void el.offsetHeight; /* trigger reflow */
+            el.style.animation = null; 
+
             const chat = document.getElementById('chat')
             chat.style.transition = 'left 0.5s, opacity 2s'
             chat.style.left = '-33vw'
@@ -124,6 +131,11 @@ const Feed = (props) => {
             document.querySelectorAll('.non-chat').forEach(e => e.style.opacity = '1')
         }
         else {
+            const el = document.getElementById('savedHeader')
+            el.style.animation = 'none';
+            void el.offsetHeight; /* trigger reflow */
+            el.style.animation = null; 
+
             const chat = document.getElementById('chat')
             chat.style.transition = 'left 0.5s, opacity 0.01s'
             chat.style.left = '0'
@@ -164,9 +176,15 @@ const Feed = (props) => {
 
     /* Whenever state changes... */
     useEffect(() => {
-
+        // const savedHeader = document.getElementById('savedHeader')
+        // savedHeader.style.visibility = 'hidden'
         /* Liking */
         if (previousValues.current.liking != liking && previousValues.current.currentResume != currentResume) {
+            const el = document.getElementById('savedHeader')
+            el.style.animation = 'none';
+            void el.offsetHeight; /* trigger reflow */
+            el.style.animation = null;
+
             const nextPdf = document.getElementById('next-pdf')
             nextPdf.style.visibility = 'visible'
             
@@ -193,6 +211,11 @@ const Feed = (props) => {
 
         /* Rewinding */
         else if (previousValues.current.rewinding != rewinding && previousValues.current.currentResume != currentResume) {
+            const el = document.getElementById('savedHeader')
+            el.style.animation = 'none';
+            void el.offsetHeight; /* trigger reflow */
+            el.style.animation = null; 
+
             const previousPdf = document.getElementById('previous-pdf')
             previousPdf.style.transition = 'top 0.75s, left 1s'
             previousPdf.style.top = '44%'
@@ -214,6 +237,11 @@ const Feed = (props) => {
 
         /* Skipping */
         else if (previousValues.current.skipping != skipping && previousValues.current.currentResume != currentResume) {
+            const el = document.getElementById('savedHeader')
+            el.style.animation = 'none';
+            void el.offsetHeight; /* trigger reflow */
+            el.style.animation = null; 
+
             const nextPdf = document.getElementById('next-pdf')
             nextPdf.style.visibility = 'visible'
             
@@ -237,14 +265,25 @@ const Feed = (props) => {
             setSkipping(false)
             previousValues.current.currentResume = currentResume
         }
-    })
 
-    
+        else if (previousValues.current.saving != saving) {
+            const currentPdf = document.getElementById('current-pdf')
+            currentPdf.style.animation = 'fadeoutin 2s linear forwards'
+
+            const savedHeader = document.getElementById('savedHeader')
+
+            savedHeader.style.animation = 'fadeinout 2s linear'
+            
+            setSaving(false)
+        }
+    })
 
     return (
         <div>
 
             <div className='feed-background'></div>
+
+            <div className='savedHeader' id='savedHeader'><h1>Saved!</h1></div>
 
             <ChatContainer id='chat' >
                 <Chat user={props.currentUserName || 'Wally Worker'} otherUser={resumes[currentResume].name} messages={currentMessages} />
@@ -284,8 +323,8 @@ const Feed = (props) => {
                 </svg>
             </div>
 
-            <div className = "save non-chat" onClick={console.log('do something')}>
-                <svg width="60" height="60" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <div className = "save non-chat" onClick={() => setSaving(true)}>
+                <svg id='saveBtn' width="60" height="60" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
                 <circle id="svg_1" stroke-width="3" stroke="#78C2C3" fill="#78C2C3" r="38.5" cy="40" cx="40"/>
                 <path id="svg_2" fill="white" d="m51.25,17.625l-22.5,0c-1.1935,0 -2.3381,0.5356 -3.182,1.4889c-0.8439,0.9533 -1.318,2.2462 -1.318,3.5944l0,40.6667l15.75,-7.625l15.75,7.625l0,-40.6667c0,-1.3482 -0.4741,-2.6411 -1.318,-3.5944c-0.8439,-0.9533 -1.9885,-1.4889 -3.182,-1.4889z"/>
                 </svg>
