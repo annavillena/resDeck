@@ -48,6 +48,17 @@ const Feed = (props) => {
             nextResume()
             setLiking(true)
         }
+        // else if (e.keycode == '32' && !chat) {
+        //     nextResume()
+        //     setSkipping(true);
+        // }
+    }
+
+    document.body.onkeyup = function(e){
+        if((e.keyCode === 32 || e.key === 'Spacebar') && !chat){
+            nextResume()
+            setSkipping(true);
+        }
     }
 
     document.onkeydown = checkKey;
