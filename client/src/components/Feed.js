@@ -162,6 +162,7 @@ const Feed = (props) => {
             const currentPdf = document.getElementById('current-pdf')
             currentPdf.style.transition = 'top 0.75s'
             currentPdf.style.top = '-82vh'
+            currentPdf.style.left = '50%'
             
             nextPdf.id = 'current-pdf'
             if (document.getElementById('previous-pdf')) {
@@ -206,9 +207,9 @@ const Feed = (props) => {
             nextPdf.style.visibility = 'visible'
             
             const currentPdf = document.getElementById('current-pdf')
-            currentPdf.style.transition = 'left 0.75s'
-            currentPdf.style.left = '-65vh'
-            currentPdf.style.top = '44%'
+            currentPdf.style.transition = 'top 0.75s'
+            currentPdf.style.left = '50%'
+            currentPdf.style.top = '150vh'
             
             nextPdf.id = 'current-pdf'
             if (document.getElementById('previous-pdf')) {
@@ -231,6 +232,8 @@ const Feed = (props) => {
 
     return (
         <div>
+
+            <div className='feed-background'></div>
 
             <ChatContainer id='chat' >
                 <Chat user={props.currentUserName || 'Wally Worker'} otherUser={resumes[currentResume].name} messages={currentMessages} />

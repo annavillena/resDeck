@@ -1,12 +1,12 @@
-#left-side-navbar {
+.left-side-navbar {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 25px;
 }
 
-#right-side-navbar {
-    margin-right: 25px;
+.right-side-navbar {
+    margin-right: 60px;
 }
 
 #title {
@@ -20,7 +20,7 @@
 #nav-container {
     /* Positioning Properties */
     position: absolute;
-    top: 30px;
+    top: 40px;
     width: 100vw;
     height: 64px;
 
