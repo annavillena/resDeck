@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.left-side-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1.5vw;
+}
+
+.right-side-navbar {
+    margin-right: 5vw;
+}
+
+
+.swirl{
+    position: absolute;
+    top: 40vh;
+    left: 0vw;
+    width: 100vw;
+    height: 15vh;
+}
+
+.savedTitle{
+    position: absolute;
+    left: 42vw;
+    top: 13vh;
+    bottom: 79.98%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 59px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #0D1B4C;
+}
+
+.pdfSaved{
+
+    height: 80vh;
+    width: 60vh;
+    display: block;
+    outline: none;
+    padding-bottom: 5%;
+
+}
+
+.pdfSaved2{
+    position: absolute;
+    top: 10vh;
+    left: 55vw;;
+
+    height: 72vh;
+    width: 60vh;
+    display: block;
+    outline: none;
+
+    transition: left 0.5s, top 0.5s;
+}
+
+.pdfSaved3{
+    position: absolute;
+    top: 90vh;
+    left: 15vw;;
+
+    height: 72vh;
+    width: 60vh;
+    display: block;
+    outline: none;
+
+    transition: left 0.5s, top 0.5s;
+}
+
+.pdfSaved4{
+    position: absolute;
+    top: 90vh;
+    left: 55vw;;
+
+    height: 72vh;
+    width: 60vh;
+    display: block;
+    outline: none;
+
+    transition: left 0.5s, top 0.5s;
+}
+
+.allResumes{
+    position: absolute;
+    left: 20vw;
+    top: 20vh;
+    height: 70vh;
+    width: 90vw;
+    
+    overflow-y: auto;
+    
+}

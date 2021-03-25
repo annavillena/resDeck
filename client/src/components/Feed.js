@@ -32,6 +32,10 @@ const Feed = (props) => {
     const [skipping, setSkipping] = useState(false)
     
     const previousValues = useRef({ currentResume, liking, rewinding, skipping })
+    
+    const SaveResume = () =>{
+        props.setSavedResumes(props.savedResumes.concat(props.resumes[currentResume]))
+    }
 
     const checkKey = (e) => {
         e = e || window.event;
@@ -51,33 +55,6 @@ const Feed = (props) => {
     }
 
     document.onkeydown = checkKey;
-
-    const resumes = [
-        {
-            resume: resume1,
-            name: 'Cocoa Touch',
-        }, 
-        {
-            resume: resume2,
-            name: 'Abigail Berns'
-        }, 
-        {
-            resume: resume3,
-            name: 'Cindy Lou Who'
-        }, 
-        // {
-        //     resume: resume4, 
-        //     name: 'Name'
-        // }, 
-        {
-            resume: resume5, 
-            name: 'Entry Level Resume Guide'
-        }, 
-        {
-            resume: resume6, 
-            name: 'Sam Student'
-        }
-    ]
 
     // const testFolder = '../uploads/';
 
@@ -132,7 +109,7 @@ const Feed = (props) => {
     /* Set next resume state */
     const nextResume = () => {
         currentMessages.length = 0
-        if (currentResume === resumes.length - 1) {
+        if (currentResume === props.resumes.length - 1) {
             setCurrentResume(0)
         }
         else {
@@ -144,7 +121,7 @@ const Feed = (props) => {
     const previousResume = () => {
         currentMessages.length = 0
         if (currentResume === 0) {
-            setCurrentResume(resumes.length - 1)
+            setCurrentResume(props.resumes.length - 1)
         }
         else {
             setCurrentResume(currentResume - 1)
@@ -171,7 +148,7 @@ const Feed = (props) => {
             
             const newNextPdf = document.createElement('object')
             newNextPdf.id = 'next-pdf'
-            newNextPdf.data = resumes[currentResume + 1 === resumes.length ? 0 : currentResume + 1].resume + '#toolbar=0&navpanes=0&scrollbar=0'
+            newNextPdf.data = props.resumes[currentResume + 1 === props.resumes.length ? 0 : currentResume + 1].resume + '#toolbar=0&navpanes=0&scrollbar=0'
             newNextPdf.type = 'application/pdf'
             nextPdf.parentElement.appendChild(newNextPdf)
 
@@ -218,7 +195,7 @@ const Feed = (props) => {
             
             const newNextPdf = document.createElement('object')
             newNextPdf.id = 'next-pdf'
-            newNextPdf.data = resumes[currentResume + 1 === resumes.length ? 0 : currentResume + 1].resume + '#toolbar=0&navpanes=0&scrollbar=0'
+            newNextPdf.data = props.resumes[currentResume + 1 === props.resumes.length ? 0 : currentResume + 1].resume + '#toolbar=0&navpanes=0&scrollbar=0'
             newNextPdf.type = 'application/pdf'
             nextPdf.parentElement.appendChild(newNextPdf)
 
@@ -233,7 +210,7 @@ const Feed = (props) => {
         <div>
 
             <ChatContainer id='chat' >
-                <Chat user={props.currentUserName || 'Wally Worker'} otherUser={resumes[currentResume].name} messages={currentMessages} />
+                <Chat user={props.currentUserName || 'Wally Worker'} otherUser={props.resumes[currentResume].name} messages={currentMessages} />
             </ChatContainer>
 
             <svg id='close-chat-button' onClick={toggleChat} width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -270,15 +247,15 @@ const Feed = (props) => {
                 </svg>
             </div>
 
-            <div className = "save non-chat" onClick={console.log('do something')}>
+            <div className = "save non-chat" onClick={()=>SaveResume()}>
                 <svg width="60" height="60" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
                 <circle id="svg_1" stroke-width="3" stroke="#78C2C3" fill="#78C2C3" r="38.5" cy="40" cx="40"/>
                 <path id="svg_2" fill="white" d="m51.25,17.625l-22.5,0c-1.1935,0 -2.3381,0.5356 -3.182,1.4889c-0.8439,0.9533 -1.318,2.2462 -1.318,3.5944l0,40.6667l15.75,-7.625l15.75,7.625l0,-40.6667c0,-1.3482 -0.4741,-2.6411 -1.318,-3.5944c-0.8439,-0.9533 -1.9885,-1.4889 -3.182,-1.4889z"/>
                 </svg>
             </div>
 
-            <object data={resumes[0].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" id='current-pdf'></object>
-            <object data={resumes[1].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" id='next-pdf'></object>
+            <object data={props.resumes[0].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" id='current-pdf'></object>
+            <object data={props.resumes[1].resume + '#toolbar=0&navpanes=0&scrollbar=0'} type="application/pdf" id='next-pdf'></object>
 
         </div>
     )
